@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お知らせ | D-tecnoWEB</title>
+  <meta name="description" content="D-tecnoWEBからのお知らせ・最新情報をお届けします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --gray-50: #f9f9f9;
+      --gray-300: #dddddd;
+      --gray-500: #888888;
+      --max-w: 1100px;
+    }
+
+    /* ===== NAV ===== */
+    #site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    #site-nav.scrolled { border-bottom-color: var(--gray-300); }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-img {
+      height: 34px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-logo-text {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--black);
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      color: #444;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--black); }
+    .nav-cta {
+      background: var(--black);
+      color: var(--white) !important;
+      font-size: 0.82rem !important;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #333 !important; }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      position: relative;
+      height: 50vh;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('../images/laptop.jpg') center center / cover no-repeat;
+      background-color: #222;
+    }
+    .page-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.52);
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .page-hero-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .page-hero-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* ===== NEWS LIST ===== */
+    .news-main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 48px 120px;
+    }
+    .news-list { list-style: none; }
+    .news-list-item {
+      border-bottom: 1px solid var(--gray-300);
+    }
+    .news-list-item:first-child { border-top: 1px solid var(--gray-300); }
+    .news-list-item a {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 28px 0;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s;
+    }
+    .news-list-item a:hover { opacity: 0.55; }
+    .news-list-date {
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      letter-spacing: 0.05em;
+    }
+    .news-list-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.55;
+    }
+
+    .back-btn-wrap {
+      text-align: center;
+      margin-top: 64px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: #333; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black);
+      padding: 64px 48px 32px;
+    }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; }
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 28px;
+    }
+    .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .footer-social a:hover { background: #fff; border-color: #fff; color: #111; }
+    .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
+    .footer-nav { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+    .footer-nav-row { display: flex; gap: 24px; flex-wrap: wrap; justify-content: flex-end; }
+    .footer-nav a {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: #fff; }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 768px) {
+      .nav-inner { padding: 0 24px; }
+      .nav-links { display: none; }
+      .news-main { padding: 60px 24px 80px; }
+      footer { padding: 48px 24px 28px; }
+      .footer-top { flex-direction: column; }
+      .footer-nav { align-items: flex-start; }
+      .footer-nav-row { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="D-tecnoWEB" class="nav-logo-img" onerror="this.style.display='none'">
+        <span class="nav-logo-text">D-tecnoWEB</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#mission">ミッション</a></li>
+        <li><a href="../index.html#services">事業内容</a></li>
+        <li><a href="../index.html#features">弊社の強み</a></li>
+        <li><a href="index.html">お知らせ</a></li>
+        <li><a href="../index.html#about">私たちについて</a></li>
+        <li><a href="../index.html#company">会社概要</a></li>
+        <li><a href="../contact.html" class="nav-cta">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <h1 class="page-hero-title">最新情報</h1>
+      <p class="page-hero-sub">News</p>
+    </div>
+  </div>
+
+  <main class="news-main">
+    <ul class="news-list">
+      <li class="news-list-item">
+        <a href="news-0240825.html">
+          <span class="news-list-date">2024/08/25</span>
+          <span class="news-list-title">音声配信プラットフォーム stand.fm（スタンドエフエム）に出演しました。</span>
+        </a>
+      </li>
+      <li class="news-list-item">
+        <a href="news-launch.html">
+          <span class="news-list-date">2024/08/25</span>
+          <span class="news-list-title">Webサイトを公開しました。</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="back-btn-wrap">
+      <a href="../index.html" class="back-btn">ホームに戻る</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <span class="footer-logo">D-tecnoWEB</span>
+          <div class="footer-social">
+            <a href="https://x.com/the_suger_web" target="_blank" rel="noopener" aria-label="X">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61550561601587" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/kantasato_web/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        <nav class="footer-nav">
+          <div class="footer-nav-row">
+            <a href="../index.html#mission">ミッション</a>
+            <a href="../index.html#services">事業内容</a>
+            <a href="../index.html#features">弊社の強み</a>
+            <a href="../contact.html">お問い合わせ</a>
+          </div>
+          <div class="footer-nav-row">
+            <a href="index.html">お知らせ</a>
+            <a href="../index.html#about">私たちについて</a>
+            <a href="../index.html#company">会社概要</a>
+          </div>
+        </nav>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+        <span class="footer-copy">© 2024 D-tecnoWEB  All Right Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>

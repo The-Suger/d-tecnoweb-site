@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金・価格目安 | D-tecnoWEB</title>
+  <meta name="description" content="D-tecnoWEBの料金目安です。LP・ホームページ制作から補助金対応、保守サポートまで。まずはお気軽にご相談ください。">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1d4ed8;
+      --black: #0f1f3d;
+      --gray-900: #0f1f3d;
+      --gray-700: #374151;
+      --gray-500: #6b7280;
+      --gray-200: #e5e7eb;
+      --gray-50: #f9fafb;
+      --white: #ffffff;
+      --accent: #f59e0b;
+    }
+    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; color: var(--gray-900); background: var(--white); line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-200); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; color: var(--black); }
+    .nav-back { font-size: 0.875rem; color: var(--primary); font-weight: 600; }
+    .nav-back:hover { text-decoration: underline; }
+
+    /* HERO */
+    .page-hero { padding: 120px 40px 64px; text-align: center; background: var(--gray-900); }
+    .page-hero .label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; display: block; }
+    .page-hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; letter-spacing: -0.03em; }
+    .page-hero p { color: rgba(255,255,255,0.7); font-size: 1rem; max-width: 560px; margin: 0 auto; line-height: 1.8; }
+
+    /* NOTICE */
+    .notice { background: #fffbeb; border: 1px solid #fcd34d; padding: 20px 32px; text-align: center; font-size: 0.9rem; color: #92400e; }
+    .notice strong { display: block; font-size: 1rem; margin-bottom: 4px; }
+
+    /* CONTAINER */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+
+    /* SECTION */
+    .price-section { padding: 72px 0; border-bottom: 1px solid var(--gray-200); }
+    .price-section:last-of-type { border-bottom: none; }
+    .sec-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; display: block; }
+    .sec-title { font-size: 1.5rem; font-weight: 800; color: var(--gray-900); margin-bottom: 8px; letter-spacing: -0.02em; }
+    .sec-desc { font-size: 0.95rem; color: var(--gray-500); margin-bottom: 36px; line-height: 1.7; }
+
+    /* PRICE TABLE */
+    .price-table { width: 100%; border-collapse: collapse; }
+    .price-table th, .price-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--gray-200); font-size: 0.95rem; }
+    .price-table thead th { background: var(--gray-900); color: var(--white); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.05em; }
+    .price-table tbody tr:hover { background: var(--gray-50); }
+    .price-table .price-val { font-weight: 700; color: var(--primary); white-space: nowrap; }
+    .price-table .note { font-size: 0.8rem; color: var(--gray-500); margin-top: 4px; }
+
+    /* HIGHLIGHT ROW */
+    .price-table .highlight { background: #eff6ff; }
+    .price-table .highlight .price-val { color: var(--primary-dark); }
+
+    /* BADGE */
+    .badge { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 100px; margin-left: 8px; vertical-align: middle; }
+    .badge-popular { background: var(--accent); color: #fff; }
+    .badge-subsidy { background: #10b981; color: #fff; }
+
+    /* CTA */
+    .price-cta { background: var(--gray-900); padding: 64px 40px; text-align: center; }
+    .price-cta h2 { font-size: 1.5rem; font-weight: 800; color: var(--white); margin-bottom: 12px; }
+    .price-cta p { color: rgba(255,255,255,0.7); margin-bottom: 32px; font-size: 0.95rem; }
+    .cta-btn { display: inline-block; background: var(--primary); color: var(--white); font-weight: 700; font-size: 1rem; padding: 16px 40px; border-radius: 4px; transition: background 0.2s; }
+    .cta-btn:hover { background: var(--primary-dark); }
+
+    /* FOOTER */
+    footer { background: var(--black); color: rgba(255,255,255,0.5); text-align: center; padding: 24px 40px; font-size: 0.8rem; }
+
+    @media (max-width: 768px) {
+      .nav-inner { padding: 0 20px; }
+      .page-hero { padding: 100px 20px 48px; }
+      .container { padding: 0 20px; }
+      .price-section { padding: 48px 0; }
+      .price-table th, .price-table td { padding: 12px 12px; font-size: 0.85rem; }
+      .price-cta { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">D-tecnoWEB</a>
+      <a href="index.html" class="nav-back">← トップページへ</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <span class="label">Price</span>
+    <h1>料金・価格目安</h1>
+    <p>すべての金額は目安です。内容・規模によって変わります。<br>まずはお気軽にご相談ください。</p>
+  </div>
+
+  <div class="notice">
+    <strong>💡 ご相談・お見積もりは完全無料です</strong>
+    「予算が不安」「補助金を使いたい」など、なんでもお気軽にどうぞ。
+  </div>
+
+  <!-- LP制作 -->
+  <div class="price-section">
+    <div class="container">
+      <span class="sec-label">Plan 01</span>
+      <h2 class="sec-title">体験プラン・LP制作</h2>
+      <p class="sec-desc">「まず試してみたい」方向けの1ページLP。紹介限定・月3件まで。</p>
+      <table class="price-table">
+        <thead>
+          <tr><th>プラン</th><th>内容</th><th>目安価格</th></tr>
+        </thead>
+        <tbody>
+          <tr class="highlight">
+            <td><strong>体験プラン</strong><span class="badge badge-popular">紹介限定</span></td>
+            <td>
+              1ページLP制作（レスポンシブ対応）<br>
+              <span class="note">納品後1ヶ月のフォロー付き・最大1回改善対応</span>
+            </td>
+            <td class="price-val">3.8万円〜</td>
+          </tr>
+          <tr>
+            <td><strong>成果型LP</strong></td>
+            <td>
+              戦略設計付き1ページLP<br>
+              <span class="note">GA4設置・公開後1ヶ月フォロー・最大2回改善対応</span>
+            </td>
+            <td class="price-val">12〜18万円</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ホームページ制作 -->
+  <div class="price-section">
+    <div class="container">
+      <span class="sec-label">Plan 02</span>
+      <h2 class="sec-title">ホームページ制作</h2>
+      <p class="sec-desc">複数ページの本格的なホームページ制作です。設備投資・外注費として要件を満たす場合、補助金の対象となる可能性があります（採択審査あり）。</p>
+      <table class="price-table">
+        <thead>
+          <tr><th>プラン</th><th>内容</th><th>目安価格</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>スタンダードHP</strong></td>
+            <td>
+              5〜8ページ構成のホームページ<br>
+              <span class="note">問い合わせフォーム・GA4設置・公開後フォロー付き</span>
+            </td>
+            <td class="price-val">18〜30万円</td>
+          </tr>
+          <tr class="highlight">
+            <td><strong>補助金申請サポート付きHP</strong></td>
+            <td>
+              申請書類の作成サポートを含むプラン<br>
+              <span class="note">補助金の採択を保証するものではありません。要件・審査あり。</span>
+            </td>
+            <td class="price-val">25〜45万円</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 保守・サポート -->
+  <div class="price-section">
+    <div class="container">
+      <span class="sec-label">Plan 03</span>
+      <h2 class="sec-title">Web保守・運用サポート</h2>
+      <p class="sec-desc">公開後も「作って終わり」にしない、継続サポートプランです。</p>
+      <table class="price-table">
+        <thead>
+          <tr><th>内容</th><th>詳細</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>月額保守プラン</strong></td>
+            <td>
+              月1回の内容更新対応・メール相談・アクセスレポート共有<br>
+              <span class="note">料金はお問い合わせください</span>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>スポット更新</strong></td>
+            <td>
+              契約なしでの単発更新対応<br>
+              <span class="note">料金はお問い合わせください</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- AI研修 -->
+  <div class="price-section">
+    <div class="container">
+      <span class="sec-label">Plan 04</span>
+      <h2 class="sec-title">AI研修・業務フロー改善</h2>
+      <p class="sec-desc">ChatGPT・Claudeなどを業務で使いこなすための個別レクチャーに加え、業務フローの見直し・改善提案もセットで対応します。</p>
+      <table class="price-table">
+        <thead>
+          <tr><th>内容</th><th>目安価格</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>AI活用・業務改善レクチャー</strong>（1時間）<br>
+              <span class="note">オンライン or 香川県内訪問対応 / 業務フロー改善の相談も歓迎</span>
+            </td>
+            <td class="price-val">1.5万円 / 1h</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 補助金ガイド -->
+  <div class="price-section" style="background: #eff6ff; padding: 48px 0;">
+    <div class="container">
+      <span class="sec-label">Subsidy Info</span>
+      <h2 class="sec-title">補助金について（参考情報）</h2>
+      <p class="sec-desc">要件を満たし採択された場合、補助率4分の3で導入負担を軽減できる可能性があります。ただし採択審査があり、不採択の場合もあります。HP制作が直接補助対象になるとは限らず、設備投資・外注費等として要件に該当するかどうか、事前確認が必要です。</p>
+
+      <div style="background:#fef2f2; border:1px solid #fca5a5; border-radius:6px; padding:14px 20px; margin-bottom:28px; font-size:0.88rem; color:#991b1b;">
+        <strong>⚠ 受付終了のお知らせ</strong><br>
+        香川県事業者の未来への投資を応援する総合補助金は、令和8年3月23日をもって申請受付を終了しています。現在、新規申請の受付は行っておりません。
+      </div>
+
+      <table class="price-table">
+        <thead>
+          <tr><th>補助金名</th><th>補助率</th><th>上限</th><th>主な条件</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>香川県事業者の未来への投資を応援する総合補助金</strong><br>
+              <span class="note" style="color:#991b1b;">※現在受付終了</span>
+            </td>
+            <td class="price-val">最大3/4</td>
+            <td>100万円</td>
+            <td>
+              <span class="note">
+                ・県内に本社のある中小企業等が対象<br>
+                ・対象経費は機械装置費・外注費等<br>
+                ・税抜25万円以上の投資が必要<br>
+                ・採択審査あり（不採択の場合あり）
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:16px; font-size:0.82rem; color:var(--gray-500)">※次回募集の情報は香川県公式サイトをご確認ください。補助金に関するご相談は、内容によってお受けできない場合があります。</p>
+    </div>
+  </div>
+
+  <div class="price-cta">
+    <h2>まずは無料でご相談ください</h2>
+    <p>「予算がわからない」「どのプランが合うか聞きたい」など、<br>どんな小さなことでも歓迎です。</p>
+    <a href="contact.html" class="cta-btn">無料相談・お問い合わせ →</a>
+  </div>
+
+  <footer>
+    <p>© 2024 D-tecnoWEB. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

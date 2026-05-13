@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D-tecnoWEB | 香川県のWebコンサルタント</title>
+  <meta name="description" content="あなたの「理想」に近づくWeb運用を。Webサイト制作・Googleマップ対策・SNSマーケティングを提供するD-tecnoWEBです。香川・全国対応。">
+  <meta property="og:title" content="D-tecnoWEB | 香川県のWebコンサルタント">
+  <meta property="og:description" content="あなたの「理想」に近づくWeb運用を。何度でも無料相談できます。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dtecnoweb.com/">
+  <meta property="og:image" content="https://dtecnoweb.com/images/ogp.jpg">
+  <meta property="og:site_name" content="D-tecnoWEB">
+  <link rel="canonical" href="https://dtecnoweb.com/">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+      --black:    #0f1f3d;
+      --white:    #ffffff;
+      --gray-50:  #f9f9f9;
+      --gray-100: #f2f2f2;
+      --gray-200: #e5e5e5;
+      --gray-300: #dddddd;
+      --gray-500: #888888;
+      --gray-700: #444444;
+      --gray-900: #0f1f3d;
+      --primary:  #2563EB;
+      --max-w:    1100px;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    section { padding: 120px 0; }
+
+    /* セクションタイトル共通 */
+    .sec-label {
+      display: block;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 14px;
+    }
+    .sec-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--black);
+      text-align: center;
+      line-height: 1.4;
+      margin-bottom: 60px;
+    }
+
+    /* フェードイン */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    [data-animate].visible { opacity: 1; transform: none; }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    #site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    #site-nav.scrolled {
+      border-bottom-color: var(--gray-300);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-img {
+      height: 34px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-logo-text {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--black);
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      color: var(--gray-700);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--black); }
+    .nav-cta {
+      background: var(--black);
+      color: var(--white) !important;
+      font-size: 0.82rem !important;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: #333 !important; transform: none !important; }
+
+    /* ハンバーガーボタン */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 200;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--black);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* モバイルメニュードロワー */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 150;
+      pointer-events: none;
+    }
+    .mobile-menu.open { pointer-events: auto; }
+    .mobile-menu-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 0.3s;
+    }
+    .mobile-menu.open .mobile-menu-overlay { background: rgba(0,0,0,0.4); }
+    .mobile-menu-drawer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 280px;
+      background: var(--white);
+      padding: 80px 32px 40px;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mobile-menu.open .mobile-menu-drawer { transform: translateX(0); }
+    .mobile-menu-drawer a {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      text-decoration: none;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-200);
+      transition: color 0.2s;
+    }
+    .mobile-menu-drawer a:hover { color: var(--primary); }
+    .mobile-menu-drawer .mobile-cta {
+      margin-top: 24px;
+      background: var(--black);
+      color: var(--white) !important;
+      text-align: center;
+      border-radius: 4px;
+      border-bottom: none;
+      padding: 14px;
+    }
+    .mobile-menu-drawer .mobile-cta:hover { background: #333; color: var(--white) !important; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      position: relative;
+      height: 100dvh;
+      min-height: 600px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/team.jpg') center center / cover no-repeat;
+      background-color: #222;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(0,0,0,0.1) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .hero-title {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+    .hero-sub {
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       MISSION
+    ============================================================ */
+    #mission { background: var(--white); }
+    .mission-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .mission-left {}
+    .mission-eyebrow {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+    }
+    .mission-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .mission-ja {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+    }
+    .mission-right {
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .mvv-block-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 10px;
+    }
+    .mvv-vision-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+    }
+    .mvv-values-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mvv-values-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .mvv-val-en {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .mvv-val-ja {
+      font-size: 0.82rem;
+      color: var(--gray-500);
+    }
+
+    /* ============================================================
+       PROBLEM
+    ============================================================ */
+    #problem { background: var(--gray-50); }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--gray-300);
+      border: 1px solid var(--gray-300);
+    }
+    .problem-card {
+      background: var(--white);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: background 0.2s;
+    }
+    .problem-card:hover { background: var(--gray-50); }
+    .problem-card-num {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--gray-100);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+    }
+    .problem-card strong {
+      display: block;
+      color: var(--black);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .problem-card p {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      line-height: 1.85;
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    #services { background: var(--white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+    .service-item {}
+    .service-item {
+      border-top: 3px solid #F5C400;
+      padding-top: 28px;
+    }
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F5C400;
+      border-radius: 8px;
+    }
+    .service-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: #111;
+      fill: none;
+      stroke-width: 1.8;
+    }
+    .service-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .service-item p {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      line-height: 1.9;
+    }
+    .service-divider { display: none; }
+
+    /* ============================================================
+       FEATURES (強み) — 交互レイアウト
+    ============================================================ */
+    #features { background: var(--white); padding-top: 0; }
+    .features-title-wrap {
+      text-align: center;
+      padding: 120px 0 80px;
+    }
+    .features-title-wrap .sec-label { margin-bottom: 12px; }
+    .features-title-wrap .sec-title { margin-bottom: 0; }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 500px;
+      align-items: stretch;
+      overflow: hidden;
+    }
+    /* 偶数行は視覚的に左右を反転（DOM順は統一） */
+    .feature-row--flip .feature-body { order: 2; }
+    .feature-row--flip .feature-photo { order: 1; }
+
+    .feature-photo {
+      overflow: hidden;
+      position: relative;
+      align-self: stretch;
+      min-height: 400px;
+    }
+    .feature-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .feature-photo:hover img { transform: scale(1.03); }
+
+    .feature-body {
+      background: var(--gray-50);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 56px 60px;
+    }
+    .feature-num {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .feature-body h3 {
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+    .feature-body p {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      line-height: 2;
+    }
+    /* Feature 03のテキストエリア：「安さへ続く」導線として下部にアクセント */
+    .feature-body--lead-next {
+      background: var(--gray-100);
+      position: relative;
+    }
+    .feature-body--lead-next::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: #f2f2f2;
+    }
+    .feature-body--lead-next .feature-lead-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gray-500);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .feature-body--lead-next .feature-lead-arrow::after {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gray-500);
+    }
+
+    /* ============================================================
+       WHY CHEAP — features内サブセクション
+    ============================================================ */
+    .why-sub {
+      background: var(--black);
+      padding: 100px 0;
+    }
+    .why-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .why-sub-label {
+      display: block;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 14px;
+    }
+    .why-sub-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+      line-height: 1.4;
+      margin-bottom: 24px;
+    }
+    .why-sub-lead {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      line-height: 1.85;
+      text-align: center;
+      margin: 0 auto 52px;
+      max-width: 580px;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .why-card {
+      background: var(--black);
+      padding: 44px 36px;
+      transition: background 0.2s;
+    }
+    .why-card:hover { background: #1c1c1c; }
+    .why-card-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.07);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -0.03em;
+      display: block;
+    }
+    .why-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+    .why-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.9;
+    }
+
+    /* ============================================================
+       AI ROADMAP
+    ============================================================ */
+    #ai-roadmap { background: var(--white); }
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr 40px 1fr;
+      align-items: center;
+      gap: 0;
+    }
+    .roadmap-step {
+      background: var(--gray-50);
+      padding: 40px 32px;
+      border: 1px solid var(--gray-300);
+    }
+    .roadmap-arrow {
+      text-align: center;
+      color: var(--gray-300);
+      font-size: 1.4rem;
+    }
+    .step-num {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      display: block;
+      margin-bottom: 16px;
+    }
+    .roadmap-step h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .roadmap-step p {
+      font-size: 0.825rem;
+      color: var(--gray-500);
+      line-height: 1.85;
+    }
+
+    /* ============================================================
+       CTA STRIP
+    ============================================================ */
+    #cta-strip {
+      background: var(--black);
+      padding: 64px 0;
+    }
+    .cta-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .cta-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .cta-icon {
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cta-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .cta-text h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .cta-text p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: background 0.2s, border-color 0.2s;
+      flex-shrink: 0;
+    }
+    .cta-btn:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.7);
+    }
+    .cta-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ============================================================
+       NEWS
+    ============================================================ */
+    #news { background: var(--white); }
+    .news-list {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .news-item {
+      display: flex;
+      align-items: baseline;
+      gap: 32px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--gray-300);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s;
+    }
+    .news-item:first-child { border-top: 1px solid var(--gray-300); }
+    .news-item:hover { opacity: 0.6; }
+    .news-date {
+      flex-shrink: 0;
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      letter-spacing: 0.05em;
+      font-variant-numeric: tabular-nums;
+    }
+    .news-title {
+      font-size: 0.9rem;
+      color: var(--black);
+      line-height: 1.6;
+    }
+    .news-empty {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 0;
+      text-align: center;
+      color: var(--gray-500);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--gray-300);
+      border-bottom: 1px solid var(--gray-300);
+    }
+
+    /* ============================================================
+       ABOUT (わたしたちについて)
+    ============================================================ */
+    #about {
+      position: relative;
+      padding: 160px 0;
+      overflow: hidden;
+    }
+    .about-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/suit.jpg') center 30% / cover no-repeat;
+      background-color: #1a1a1a;
+    }
+    .about-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.62);
+    }
+    .about-content {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 48px;
+      text-align: center;
+    }
+    .about-label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+    }
+    .about-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+    .about-text {
+      font-size: 0.925rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 2.1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       FAQ
+    ============================================================ */
+    #faq { background: var(--gray-50); }
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--gray-300);
+      overflow: hidden;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--gray-300); }
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--black);
+      user-select: none;
+    }
+    .faq-q:hover { opacity: 0.7; }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      position: relative;
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--black);
+      border-radius: 1px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .faq-icon::before { width: 100%; height: 1.5px; top: 50%; left: 0; transform: translateY(-50%); }
+    .faq-icon::after  { width: 1.5px; height: 100%; top: 0; left: 50%; transform: translateX(-50%); }
+    .faq-item.open .faq-icon::after { opacity: 0; transform: translateX(-50%) rotate(90deg); }
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-item.open .faq-body { max-height: 300px; }
+    .faq-a {
+      padding: 0 0 22px;
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      line-height: 1.9;
+    }
+
+    /* ============================================================
+       WORKS
+    ============================================================ */
+    #works { background: var(--white); }
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--gray-300);
+      border: 1px solid var(--gray-300);
+    }
+    .work-card {
+      background: var(--white);
+      padding: 40px 36px;
+      transition: background 0.2s;
+    }
+    .work-card:hover { background: var(--gray-50); }
+    .work-label {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+    }
+    .work-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    .work-card p {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .work-link { display: inline-block; margin-top: 14px; font-size: 0.85rem; font-weight: 600; color: var(--primary); text-decoration: none; }
+    .work-link:hover { text-decoration: underline; }
+    .work-tag {
+      font-size: 0.7rem;
+      color: var(--gray-700);
+      border: 1px solid var(--gray-300);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+    .works-placeholder {
+      grid-column: 1 / -1;
+      background: var(--white);
+      padding: 60px;
+      text-align: center;
+      color: var(--gray-500);
+      font-size: 0.875rem;
+      line-height: 1.9;
+    }
+
+    /* ============================================================
+       COMPANY
+    ============================================================ */
+    #company { background: var(--gray-50); }
+    .company-table {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    .company-table tr { border-bottom: 1px solid var(--gray-300); }
+    .company-table tr:first-child { border-top: 1px solid var(--gray-300); }
+    .company-table th {
+      width: 180px;
+      padding: 20px 0;
+      text-align: left;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      vertical-align: top;
+      padding-right: 24px;
+    }
+    .company-table td {
+      padding: 20px 0;
+      font-size: 0.875rem;
+      color: var(--black);
+      line-height: 1.8;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--black);
+      padding: 64px 48px 32px;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 28px;
+    }
+    .footer-brand {}
+    .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .footer-social a:hover {
+      background: var(--white);
+      border-color: var(--white);
+      color: var(--black);
+    }
+    .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
+
+    .footer-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+    }
+    .footer-nav-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .footer-nav a {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+    /* ============================================================
+       TRIAL BANNER
+    ============================================================ */
+    #trial-banner {
+      background: #F5C400;
+      padding: 18px 0;
+    }
+    .trial-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .trial-badge {
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 2px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+    .trial-body { flex: 1; }
+    .trial-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.5;
+    }
+    .trial-title span {
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+    .trial-sub {
+      font-size: 0.8rem;
+      color: rgba(0,0,0,0.6);
+      margin-top: 2px;
+    }
+    .trial-btn {
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .trial-btn:hover { background: #333; }
+
+    /* ============================================================
+       MID CTA（セクション間）
+    ============================================================ */
+    .mid-cta {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-300);
+      border-bottom: 1px solid var(--gray-300);
+      padding: 28px 0;
+      text-align: center;
+    }
+    .mid-cta p {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      margin-bottom: 14px;
+    }
+    .mid-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .mid-cta-btn:hover { background: #333; }
+
+    /* ============================================================
+       ACCOMPANY（公開後の伴走）
+    ============================================================ */
+    #accompany { background: var(--white); }
+    .accompany-grid {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr 40px 1fr;
+      align-items: center;
+    }
+    .accompany-step {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-300);
+      padding: 36px 28px;
+    }
+    .accompany-step .step-num {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      display: block;
+      margin-bottom: 14px;
+      background: var(--black);
+      color: var(--white);
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+    .accompany-step h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .accompany-step p {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      line-height: 1.85;
+    }
+    .accompany-arrow {
+      text-align: center;
+      color: var(--gray-300);
+      font-size: 1.4rem;
+    }
+    .accompany-note {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      background: #FFF9E6;
+      border: 1px solid #F5C400;
+      padding: 14px 24px;
+      border-radius: 4px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .container { padding: 0 24px; }
+      .nav-inner { padding: 0 24px; }
+      .hero-content { padding: 0 24px; }
+      .mission-inner { padding: 0 24px; grid-template-columns: 1fr; gap: 48px; }
+      .why-inner { padding: 0 24px; }
+      .cta-inner { padding: 0 24px; }
+      .about-content { padding: 0 24px; }
+      .footer-inner { padding: 0 24px; }
+      footer { padding: 48px 24px 28px; }
+
+      section { padding: 80px 0; }
+
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu { display: block; }
+
+      .problem-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; gap: 36px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .works-grid { grid-template-columns: 1fr; }
+
+      .feature-row { grid-template-columns: 1fr; min-height: auto; }
+      /* モバイルでは反転解除・写真を上に固定 */
+      .feature-row--flip .feature-body { order: 2; }
+      .feature-row--flip .feature-photo { order: 1; }
+      .feature-photo { height: 260px; }
+      .feature-body { padding: 40px 32px; }
+      .feature-body--lead-next .feature-lead-arrow { margin-top: 20px; }
+      .why-sub { padding: 72px 0; }
+      .why-grid { grid-template-columns: 1fr; }
+
+      .roadmap-grid {
+        grid-template-columns: 1fr;
+        gap: 1px;
+        background: var(--gray-300);
+      }
+      .roadmap-arrow { display: none; }
+      .roadmap-step { border: none; }
+
+      .cta-inner { flex-direction: column; gap: 24px; }
+      .cta-left { flex-direction: column; align-items: flex-start; }
+
+      .footer-top { flex-direction: column; }
+      .footer-nav { align-items: flex-start; }
+      .footer-nav-row { justify-content: flex-start; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      /* trial-banner */
+      #trial-banner { padding: 20px 16px; }
+      .trial-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .trial-btn { width: 100%; text-align: center; }
+
+      /* mid-cta */
+      .mid-cta { padding: 40px 24px; }
+      .mid-cta h3 { font-size: 1.1rem; }
+      .mid-cta-btn { padding: 14px 28px; font-size: 0.95rem; }
+
+      /* accompany */
+      #accompany { padding: 80px 0; }
+      .accompany-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .accompany-step { padding: 28px 20px; }
+      .accompany-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="site-nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="images/logo.png" alt="D-tecnoWEB" class="nav-logo-img" loading="eager" decoding="async" onerror="this.style.display='none'">
+        <span class="nav-logo-text">D-tecnoWEB</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#mission">ミッション</a></li>
+        <li><a href="#services">事業内容</a></li>
+        <li><a href="#features">弊社の強み</a></li>
+        <li><a href="posts/index.html">お知らせ</a></li>
+        <li><a href="price.html">料金</a></li>
+        <li><a href="#about">私たちについて</a></li>
+        <li><a href="#company">会社概要</a></li>
+        <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- モバイルメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu-drawer">
+      <a href="#mission" class="menu-link">ミッション</a>
+      <a href="#services" class="menu-link">事業内容</a>
+      <a href="#features" class="menu-link">弊社の強み</a>
+      <a href="posts/index.html" class="menu-link">お知らせ</a>
+      <a href="price.html" class="menu-link">料金</a>
+      <a href="#about" class="menu-link">私たちについて</a>
+      <a href="#company" class="menu-link">会社概要</a>
+      <a href="contact.html" class="mobile-cta menu-link">無料相談・お問い合わせ</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        困ったこと、<br>なんでも相談してください。
+      </h1>
+      <p class="hero-sub">
+        Web制作はもちろん、集客・SNS・補助金のことまで。<br>香川の中小企業に寄り添い、成果が出るまで一緒に歩みます。
+      </p>
+    </div>
+  </section>
+
+  <!-- TRIAL BANNER -->
+  <div id="trial-banner">
+    <div class="trial-inner">
+      <span class="trial-badge">紹介限定</span>
+      <div class="trial-body">
+        <p class="trial-title">体験プラン 特別価格 <span>3.8万円〜</span> で始められます</p>
+        <p class="trial-sub">「まず試してみたい」方向けの1ページLP制作。知人紹介・月3件限定。</p>
+      </div>
+      <a href="contact.html" class="trial-btn">無料相談で詳しく聞く →</a>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <section id="mission" data-animate>
+    <div class="mission-inner">
+      <div class="mission-left">
+        <span class="mission-eyebrow">Mission</span>
+        <h2 class="mission-title">
+          Technology<br>for freedom.<br>Always by<br>your side.
+        </h2>
+        <p class="mission-ja">テクノロジーで自由をつくり、挑戦者に寄り添い続ける。</p>
+      </div>
+      <div class="mission-right">
+        <div class="mvv-block">
+          <span class="mvv-block-label">Vision</span>
+          <p class="mvv-vision-text">10年後も、困ったときに<br>最初に連絡してもらえる存在へ。</p>
+        </div>
+        <div class="mvv-block">
+          <span class="mvv-block-label">Values</span>
+          <ul class="mvv-values-list">
+            <li>
+              <span class="mvv-val-en">Be honest.</span>
+              <span class="mvv-val-ja">心から良いと思えるサービスだけを提供する</span>
+            </li>
+            <li>
+              <span class="mvv-val-en">Think long.</span>
+              <span class="mvv-val-ja">お客様のビジョン実現まで、徹底的に寄り添い続ける</span>
+            </li>
+            <li>
+              <span class="mvv-val-en">Make it work.</span>
+              <span class="mvv-val-ja">笑顔になれるか？を判断基準に、成果にこだわる</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="container">
+      <span class="sec-label">Problem</span>
+      <h2 class="sec-title">こんな悩みありませんか？</h2>
+      <div class="problem-grid" data-animate>
+        <div class="problem-card">
+          <span class="problem-card-num">01</span>
+          <strong>サイトは作ったけど、ほとんど反応がない</strong>
+          <p>うどん屋さん、整骨院、工務店、観光施設…「綺麗なサイトになったのに問い合わせが増えない」という声が非常に多いです。</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-num">02</span>
+          <strong>制作費が高すぎて、なかなか踏み切れない</strong>
+          <p>「数十万円〜100万円以上」と言われて見送った経験がある。補助金を使っても自己負担が痛いと感じるケースが目立ちます。</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-num">03</span>
+          <strong>少し直したいだけなのに、業者に頼むしかない</strong>
+          <p>「料金が発生するから更新を我慢している」「更新をお願いしたらまた見積もりが…」という状況がよくあります。</p>
+        </div>
+        <div class="problem-card">
+          <span class="problem-card-num">04</span>
+          <strong>Webのことで気軽に相談できる相手がいない</strong>
+          <p>補助金の申請も絡めたい、集客の相談もしたいけど、「地元で信頼できる人」が見つからない。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA 1 -->
+  <div class="mid-cta">
+    <div class="container">
+      <p>「Webのこと、何から始めればいいかわからない」そんなご相談も大歓迎です。</p>
+      <a href="contact.html" class="mid-cta-btn">無料で相談する →</a>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <span class="sec-label">Services</span>
+      <h2 class="sec-title">事業内容</h2>
+      <div class="services-grid">
+        <div class="service-item" data-animate>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          </div>
+          <h3>Web制作</h3>
+          <p>LP・ホームページの新規制作からリニューアルまで。AI活用で高品質・低価格を実現します。</p>
+        </div>
+        <div class="service-item" data-animate style="transition-delay:0.1s">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Web保守・運用サポート</h3>
+          <p>公開後の更新・管理を月額定額でサポート。困ったときにすぐ相談できる環境を提供します。</p>
+        </div>
+        <div class="service-item" data-animate style="transition-delay:0.2s">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3>AI研修・業務改善</h3>
+          <p>ChatGPT・Claudeなどを業務に活かす方法を個別にレクチャー。業務フローの見直しや改善提案もセットで対応。AIを使いこなせるまで伴走します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA 2 -->
+  <div class="mid-cta">
+    <div class="container">
+      <p>うどん屋さんも、整骨院も、獅子舞保存会も。香川のビジネスなら何でも相談ください。</p>
+      <a href="contact.html" class="mid-cta-btn">まず話を聞いてみる →</a>
+    </div>
+  </div>
+
+  <!-- FEATURES + WHY CHEAP (統合) -->
+  <section id="features">
+    <div class="features-title-wrap">
+      <span class="sec-label">Features</span>
+      <h2 class="sec-title">D-tecnoWEBの強み</h2>
+    </div>
+
+    <!-- Feature 01: テキスト左・写真右 -->
+    <div class="feature-row" data-animate>
+      <div class="feature-body">
+        <span class="feature-num">Feature 01</span>
+        <h3>顧客に寄り添い<br>伴走するパートナー</h3>
+        <p>単なるコンサルタントではなく、お客様と共に歩む信頼できるパートナーとして、長期にわたって支援します。ビジネスの課題解決だけでなく、共に成長を目指す姿勢で、お客様の成功を最優先に考え、あらゆるフェーズでのサポートを提供します。</p>
+      </div>
+      <div class="feature-photo">
+        <img src="images/suit.jpg" alt="顧客に寄り添い伴走するパートナー" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <!-- Feature 02: 写真左・テキスト右（--flipで反転） -->
+    <div class="feature-row feature-row--flip" data-animate>
+      <div class="feature-body">
+        <span class="feature-num">Feature 02</span>
+        <h3>理想像から逆算した<br>戦略立案</h3>
+        <p>ビジネスにおいては、目先の利益を追求するあまり、目的を見失うケースも少なくありません。お客様の理想的なビジネス像を明確に定義し、その到達に必要なステップを逆算して戦略を立案します。目指すべきゴールから逆算することで、各段階で最適な施策を講じ、理想を現実に変える具体的な計画をご提案いたします。</p>
+      </div>
+      <div class="feature-photo">
+        <img src="images/laptop.jpg" alt="理想像から逆算した戦略立案" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <!-- Feature 03: テキスト左・写真右（→安さの秘訣へ続く） -->
+    <div class="feature-row" data-animate>
+      <div class="feature-body feature-body--lead-next">
+        <span class="feature-num">Feature 03</span>
+        <h3>公開後も、<br>ちゃんと見ています。</h3>
+        <p>サイトを作って終わりではありません。公開後、実際に問い合わせが増えているか・アクセスが伸びているかを数字で一緒に確認します。「なんか思ったより反応ない…」と感じたときも、すぐ相談してください。改善までしっかり伴走します。</p>
+        <span class="feature-lead-arrow">なぜ成果が出るのか</span>
+      </div>
+      <div class="feature-photo">
+        <img src="images/office.jpg" alt="公開後も継続してサポート" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <!-- Why Cheap サブセクション -->
+    <div class="why-sub">
+      <div class="why-inner">
+        <span class="why-sub-label">Why Results</span>
+        <h2 class="why-sub-title">なぜD-tecnoWEBだと成果が出やすいの？</h2>
+        <p class="why-sub-lead">ただ「綺麗なサイトを作る」だけではありません。<br>Webが苦手な方でも「なんか反応が来るようになった」と思えるサイトを、一緒に作ります。</p>
+        <div class="why-grid" data-animate>
+          <div class="why-card">
+            <span class="why-card-num">01</span>
+            <h3>元営業マンが「相談したくなる」作り方を考えます</h3>
+            <p>業界歴5年以上の経験から、「このサイトを見た人が、電話やLINEをしたくなるにはどうしたらいいか」を、Webの知識がなくてもわかるように、しっかり考えながら作ります。</p>
+          </div>
+          <div class="why-card">
+            <span class="why-card-num">02</span>
+            <h3>作った後も、ちゃんと一緒に数字を見ます</h3>
+            <p>公開後、「何人に見てもらえたか」「どのくらいお問い合わせがあったか」を、難しい言葉を使わずに一緒に確認します。「思ったより反応がないな…」という時も、最大2回まで一緒に改善案を考えます。「作って終わり」にはしません。</p>
+          </div>
+          <div class="why-card">
+            <span class="why-card-num">03</span>
+            <h3>AIを使って、速くて安く、いいものを作る</h3>
+            <p>最新のAIツールを使って作業を効率化しているので、普通より短い期間（最短3〜5日）で作れます。その分、料金を抑えつつ、じっくり「成果が出やすい」設計に時間を使えます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOMPANY -->
+  <section id="accompany">
+    <div class="container">
+      <span class="sec-label">After Delivery</span>
+      <h2 class="sec-title">公開後の伴走、具体的にやること</h2>
+      <div class="accompany-grid" data-animate>
+        <div class="accompany-step">
+          <span class="step-num">公開直後</span>
+          <h3>アクセス計測の仕組みを設定します</h3>
+          <p>何人来たか・どこから来たかを見える化。「数字が苦手」な方にも、わかりやすく説明します。</p>
+        </div>
+        <div class="accompany-arrow">→</div>
+        <div class="accompany-step">
+          <span class="step-num">1〜2週間後</span>
+          <h3>最初の数字を一緒に確認します</h3>
+          <p>「思ったより少ない…」でも大丈夫。どこを改善すれば問い合わせが増えるかを一緒に考えます。</p>
+        </div>
+        <div class="accompany-arrow">→</div>
+        <div class="accompany-step">
+          <span class="step-num">1ヶ月後まで</span>
+          <h3>改善して、また確認（最大2回）</h3>
+          <p>「ボタンの位置を変えよう」「このコピーを直そう」など、小さな改善を繰り返して成果につなげます。</p>
+        </div>
+      </div>
+      <p class="accompany-note">💬 LINEやメールでいつでも相談OK。「こんなこと聞いていいのかな？」もウェルカムです。</p>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section id="cta-strip">
+    <div class="cta-inner">
+      <div class="cta-left">
+        <div class="cta-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="cta-text">
+          <h3>お問い合わせ・ご相談</h3>
+          <p>オンラインでの無料相談であなたのお悩みをお聞かせください。</p>
+        </div>
+      </div>
+      <a href="contact.html" class="cta-btn">
+        問い合わせる
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+    <div class="container">
+      <span class="sec-label">News</span>
+      <h2 class="sec-title">お知らせ</h2>
+      <div class="news-list" data-animate>
+        <a href="posts/news-0240825.html" class="news-item">
+          <span class="news-date">2024/08/25</span>
+          <span class="news-title">音声配信プラットフォーム stand.fm（スタンドエフエム）に出演しました。</span>
+        </a>
+        <a href="posts/news-launch.html" class="news-item">
+          <span class="news-date">2024/08/25</span>
+          <span class="news-title">Webサイトを公開しました。</span>
+        </a>
+      </div>
+      <div style="text-align:center;margin-top:40px;" data-animate>
+        <a href="posts/index.html" style="display:inline-flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:700;color:#111;text-decoration:none;border-bottom:1px solid #111;padding-bottom:3px;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='1'">
+          お知らせ一覧を見る
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT (わたしたちについて) -->
+  <section id="about" data-animate>
+    <div class="about-bg"></div>
+    <div class="about-content">
+      <span class="about-label">About Us</span>
+      <h2 class="about-title">香川に根ざした、あなたのWebパートナー</h2>
+      <p class="about-text">
+        うどん屋さんも、獅子舞の保存会も、直島への宿も、地元の整骨院や美容室も——<br>
+        香川にはWebをもっと活かせるお店や団体がたくさんあります。<br><br>
+        「何から始めればいいかわからない」「前に頼んだら更新できなくなった」<br>
+        「作ったけど問い合わせが来ない」。そんなお声をよく耳にします。<br><br>
+        D-tecnoWEBは、香川を拠点に全国対応。<br>
+        Web以外のご相談も含めて、地元のビジネスが成果を出すまで一緒に歩みます。
+      </p>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="works">
+    <div class="container">
+      <span class="sec-label">Works</span>
+      <h2 class="sec-title">制作実績</h2>
+      <div class="works-grid" data-animate>
+        <div class="work-card">
+          <span class="work-label">Case #01</span>
+          <h3>D-tecnoWEB 公式サイト</h3>
+          <p>本サイト自体をClaude Codeで制作。明確な料金体系でシンプルに仕上げました。</p>
+          <div class="work-tags">
+            <span class="work-tag">HP制作</span>
+            <span class="work-tag">Claude Code</span>
+            <span class="work-tag">レスポンシブ対応</span>
+          </div>
+        </div>
+        <div class="work-card">
+          <span class="work-label">Case #02</span>
+          <h3>下川部獅子組 公式サイト</h3>
+          <p>伝統芸能保存会の情報発信サイトを半日で構築。モダンなUI/UXで文化継承のデジタル化を実現。公開後のアクセス・問い合わせ数を継続モニタリング中。</p>
+          <div class="work-tags">
+            <span class="work-tag">HP制作</span>
+            <span class="work-tag">超速納品（0.5日）</span>
+            <span class="work-tag">レスポンシブ対応</span>
+            <span class="work-tag">公開後フォロー</span>
+          </div>
+          <a href="https://shimokawabe-shishigumi.vercel.app/" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-placeholder">
+          制作実績を随時追加予定です。<br>まずはお気軽にご相談ください。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <span class="sec-label">FAQ</span>
+      <h2 class="sec-title">よくある質問</h2>
+      <div class="faq-list" data-animate>
+        <div class="faq-item">
+          <div class="faq-q"><span>相談は無料ですか？</span><div class="faq-icon"></div></div>
+          <div class="faq-body"><div class="faq-a">はい、何度でも無料です。まずはお気軽にご連絡ください。</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>制作期間はどのくらいかかりますか？</span><div class="faq-icon"></div></div>
+          <div class="faq-body"><div class="faq-a">LP制作は最短3〜5日、HP制作は内容により2〜4週間が目安です。「来週のイベントに間に合わせたい」などスピード重視の案件もお気軽にご相談ください。</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>自分でサイトを更新できるようになりますか？</span><div class="faq-icon"></div></div>
+          <div class="faq-body"><div class="faq-a">はい、更新しやすい環境を一緒に作ります。操作方法もしっかりレクチャーします。</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>保守契約は必須ですか？</span><div class="faq-icon"></div></div>
+          <div class="faq-body"><div class="faq-a">任意ですが、強くおすすめしています。月額定額で、更新対応・メール相談・アクセス確認など安心のサポートが受けられます。詳細は<a href="price.html" style="color:var(--primary)">料金ページ</a>をご確認ください。</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>香川以外でも対応できますか？</span><div class="faq-icon"></div></div>
+          <div class="faq-body"><div class="faq-a">オンラインで全国対応可能です。まずはご相談ください。</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY -->
+  <section id="company">
+    <div class="container">
+      <span class="sec-label">Company</span>
+      <h2 class="sec-title">会社概要</h2>
+      <table class="company-table" data-animate>
+        <tr>
+          <th>屋号</th>
+          <td>D-tecnoWEB（ディー・テクノウェブ）</td>
+        </tr>
+        <tr>
+          <th>代表者名</th>
+          <td>佐藤 寛太</td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td>sato.dtecnoweb@gmail.com</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>香川県高松市</td>
+        </tr>
+        <tr>
+          <th>事業内容</th>
+          <td>
+            ・Webサイト制作（LP・ホームページ）<br>
+            ・補助金対応ホームページ制作<br>
+            ・Web保守・運用サポート<br>
+            ・集客・SNS運用相談<br>
+            ・AI活用・Webリテラシー研修
+          </td>
+        </tr>
+        <tr>
+          <th>対応エリア</th>
+          <td>香川・全国（オンライン対応）</td>
+        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td>平日 10:00〜18:00（土日祝は要相談）</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">D-tecnoWEB</span>
+          <div class="footer-social">
+            <a href="https://x.com/the_suger_web" target="_blank" rel="noopener" aria-label="X">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61550561601587" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/kantasato_web/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        <nav class="footer-nav">
+          <div class="footer-nav-row">
+            <a href="#mission">ミッション</a>
+            <a href="#services">事業内容</a>
+            <a href="#features">弊社の強み</a>
+            <a href="contact.html">お問い合わせ</a>
+          </div>
+          <div class="footer-nav-row">
+            <a href="posts/index.html">お知らせ</a>
+            <a href="#about">私たちについて</a>
+            <a href="#company">会社概要</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2024 D-tecnoWEB  All Right Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ナビスクロール
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    // スムーズスクロール
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id === '#') return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 64;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    // ハンバーガーメニュー
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function openMenu() {
+      hamburgerBtn.classList.add('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      hamburgerBtn.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    menuOverlay.addEventListener('click', closeMenu);
+
+    // メニュー内リンクをクリックで閉じる
+    document.querySelectorAll('.menu-link').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+  </script>
+</body>
+</html>
