@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="手打ちうどん 讃岐の縁 | 香川県高松市の本格手打ちうどん店。創業30年、自家製手打ち麺と天然だしにこだわった一杯をご提供します。">
+  <title>手打ちうどん 讃岐の縁 | 香川県高松市</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="手打ちうどん 讃岐の縁 | 香川県高松市">
+  <meta property="og:description" content="創業30年、自家製手打ち麺と天然だし。香川県高松市の本格さぬきうどん店。">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1200&q=80">
+  <meta property="og:url" content="https://sanuki-en.example.com">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://images.unsplash.com">
+
+  <!-- GA4 トラッキングコード（要設置） -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    
+    /* Skip navigation (a11y) */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      z-index: 9999;
+      border-radius: 0 0 4px 0;
+    }
+    .skip-link:focus { top: 0; }
+    /* Focus indicator */
+    :focus-visible {
+      outline: 3px solid #CC0000;
+      outline-offset: 2px;
+    }
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* ── Spacing tokens ── */
+      --space-xs:   4px;
+      --space-sm:   8px;
+      --space-md:   16px;
+      --space-lg:   32px;
+      --space-xl:   64px;
+      --space-2xl:  96px;
+      /* ── Typography tokens ── */
+      --font-base:  'Noto Sans JP', sans-serif;
+      --text-xs:    0.75rem;
+      --text-sm:    0.875rem;
+      --text-md:    1rem;
+      --text-lg:    1.25rem;
+      --text-xl:    1.5rem;
+      --text-2xl:   2rem;
+      --text-3xl:   2.75rem;
+      --text-4xl:   3.5rem;
+      --leading-tight: 1.3;
+      --leading-base:  1.7;
+      /* ── Shadow tokens ── */
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.08);
+      --shadow-md:  0 4px 16px rgba(0,0,0,.12);
+      --shadow-lg:  0 8px 32px rgba(0,0,0,.16);
+      /* ── Border radius tokens ── */
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  16px;
+      --radius-full: 9999px;
+      /* ── Transition tokens ── */
+      --transition-fast:   150ms ease;
+      --transition-base:   250ms ease;
+      --transition-slow:   400ms ease;
+      --brown:      #8B4513;
+      --brown-dark: #6b3410;
+      --brown-light:#a0522d;
+      --wheat:      #F5DEB3;
+      --wheat-light:#fdf6e3;
+      --red:        #CC0000;
+      --red-dark:   #aa0000;
+      --white:      #ffffff;
+      --gray-100:   #f8f5f0;
+      --gray-200:   #ece8e0;
+      --gray-500:   #8a8070;
+      --gray-700:   #4a4035;
+      --text-main:  #2d2416;
+      --shadow-sm:  0 2px 8px rgba(139,69,19,.12);
+      --shadow-md:  0 6px 24px rgba(139,69,19,.18);
+      --shadow-lg:  0 16px 48px rgba(139,69,19,.22);
+      --radius:     8px;
+      --radius-lg:  16px;
+      --transition: .3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-main);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 900;
+      color: var(--brown);
+      text-align: center;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray-500);
+      font-size: .95rem;
+      margin-bottom: 56px;
+      letter-spacing: .05em;
+    }
+
+    .section-subtitle::before {
+      content: '—— ';
+    }
+    .section-subtitle::after {
+      content: ' ——';
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: .06em;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--brown);
+      color: var(--white);
+      border-color: var(--brown);
+    }
+    .btn-primary:hover {
+      background: var(--brown-dark);
+      border-color: var(--brown-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--brown);
+      border-color: var(--brown);
+    }
+    .btn-outline:hover {
+      background: var(--brown);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--brown);
+      border-color: var(--white);
+    }
+    .btn-white:hover {
+      background: var(--wheat);
+      border-color: var(--wheat);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0,0,0,.2);
+    }
+
+    .btn-white-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,.8);
+    }
+    .btn-white-outline:hover {
+      background: rgba(255,255,255,.15);
+      transform: translateY(-2px);
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: .1s; }
+    .fade-in-delay-2 { transition-delay: .2s; }
+    .fade-in-delay-3 { transition-delay: .3s; }
+    .fade-in-delay-4 { transition-delay: .4s; }
+
+    /* ============================================================
+       HEADER / NAV
+    ============================================================ */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+      padding: 20px 0;
+    }
+
+    #header.scrolled {
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
+      padding: 12px 0;
+    }
+
+    #header .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      color: var(--white);
+      transition: color var(--transition);
+      white-space: nowrap;
+    }
+
+    #header.scrolled .logo {
+      color: var(--brown);
+    }
+
+    .logo span {
+      display: block;
+      font-size: .65rem;
+      font-weight: 400;
+      letter-spacing: .15em;
+      margin-top: 2px;
+      opacity: .8;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    nav a {
+      padding: 8px 14px;
+      font-size: .88rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.9);
+      border-radius: 50px;
+      transition: var(--transition);
+      letter-spacing: .04em;
+    }
+
+    #header.scrolled nav a {
+      color: var(--gray-700);
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,.15);
+      color: var(--white);
+    }
+
+    #header.scrolled nav a:hover {
+      background: var(--wheat);
+      color: var(--brown);
+    }
+
+    .nav-reserve {
+      margin-left: 12px;
+      padding: 10px 22px;
+      background: var(--red);
+      color: var(--white) !important;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: .88rem;
+      letter-spacing: .06em;
+      border: 2px solid var(--red);
+      transition: var(--transition);
+    }
+
+    .nav-reserve:hover {
+      background: var(--red-dark) !important;
+      border-color: var(--red-dark) !important;
+      color: var(--white) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(204,0,0,.4);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 1100;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    #header.scrolled .hamburger span {
+      background: var(--brown);
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(43,28,12,.97);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu a {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--wheat);
+      letter-spacing: .12em;
+      transition: color var(--transition);
+    }
+
+    .mobile-menu a:hover {
+      color: var(--white);
+    }
+
+    .mobile-menu .nav-reserve {
+      font-size: 1.1rem;
+      padding: 14px 36px;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #home {
+      min-height: 100vh;
+      background: linear-gradient(rgba(50,20,5,0.5), rgba(50,20,5,0.5)), url("https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1920&q=85&auto=format&fit=crop") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    #home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(245,222,179,.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,.05) 0%, transparent 50%);
+    }
+
+    /* Decorative circles */
+    #home::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,222,179,.12);
+      right: -200px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .hero-deco {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(245,222,179,.08);
+    }
+
+    .hero-deco-1 {
+      width: 400px;
+      height: 400px;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .hero-deco-2 {
+      width: 200px;
+      height: 200px;
+      left: 5%;
+      bottom: 10%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--white);
+      max-width: 800px;
+      padding: 0 24px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245,222,179,.15);
+      border: 1px solid rgba(245,222,179,.35);
+      color: var(--wheat);
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      padding: 6px 20px;
+      border-radius: 50px;
+      margin-bottom: 32px;
+    }
+
+    .hero-main {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 900;
+      letter-spacing: .1em;
+      line-height: 1.3;
+      margin-bottom: 28px;
+      text-shadow: 0 2px 20px rgba(0,0,0,.3);
+    }
+
+    .hero-main .highlight {
+      color: var(--wheat);
+    }
+
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      font-weight: 300;
+      color: rgba(255,255,255,.85);
+      line-height: 1.9;
+      margin-bottom: 48px;
+      letter-spacing: .04em;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.5);
+      font-size: .72rem;
+      letter-spacing: .15em;
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(255,255,255,.5), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+      0%, 100% { opacity: .3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
+
+    /* ============================================================
+       MENU
+    ============================================================ */
+    #menu {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .tab-nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 12px 32px;
+      border-radius: 50px;
+      border: 2px solid var(--gray-200);
+      background: var(--white);
+      color: var(--gray-500);
+      font-weight: 700;
+      font-size: .9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: 'Noto Sans JP', sans-serif;
+      letter-spacing: .06em;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--brown-light);
+      color: var(--brown);
+    }
+
+    .tab-btn.active {
+      background: var(--brown);
+      border-color: var(--brown);
+      color: var(--white);
+    }
+
+    .tab-panel {
+      display: none;
+      animation: fadeTab .4s ease;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeTab {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .menu-card {
+      background: var(--gray-100);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      border: 1px solid var(--gray-200);
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .menu-img {
+      height: 180px;
+      background: url('https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=600&q=80&auto=format&fit=crop') center/cover no-repeat; background-color:#ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+    }
+
+    .menu-img-2 { background: url('https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=600&q=80&auto=format&fit=crop') center/cover no-repeat; background-color:#ddd; }
+    .menu-img-3 { background: url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80&auto=format&fit=crop') center/cover no-repeat; background-color:#ddd; }
+    .menu-img-4 { background: url('https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80&auto=format&fit=crop') center/cover no-repeat; background-color:#ddd; }
+    .menu-img-5 { background: url('https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=600&q=80&auto=format&fit=crop') center/cover no-repeat; background-color:#ddd; }
+
+    .menu-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--red);
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      letter-spacing: .06em;
+    }
+
+    .menu-body {
+      padding: 20px 24px 24px;
+    }
+
+    .menu-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .menu-desc {
+      font-size: .85rem;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .menu-price {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--brown);
+    }
+
+    .menu-price span {
+      font-size: .75rem;
+      font-weight: 400;
+      color: var(--gray-500);
+      margin-left: 4px;
+    }
+
+    /* Topping */
+    .topping-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .topping-card {
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+    }
+
+    .topping-card:hover {
+      border-color: var(--brown-light);
+      background: var(--wheat-light);
+    }
+
+    .topping-name {
+      font-weight: 700;
+      font-size: .95rem;
+    }
+
+    .topping-price {
+      font-weight: 900;
+      color: var(--brown);
+      font-size: 1.05rem;
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    #about {
+      padding: 100px 0;
+      background: var(--wheat-light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-photo {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-photo-main {
+      height: 400px;
+      background: linear-gradient(135deg, #c8a06a 0%, #8B4513 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: rgba(255,255,255,.6);
+      font-size: .85rem;
+      letter-spacing: .1em;
+    }
+
+    .about-photo-main .placeholder-icon {
+      font-size: 3.5rem;
+      opacity: .5;
+    }
+
+    .about-photos-sub {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .about-photo-sub {
+      height: 160px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      color: rgba(255,255,255,.5);
+      letter-spacing: .08em;
+    }
+
+    .about-photo-sub-1 {
+      background: linear-gradient(135deg, #d4b080 0%, #a06030 100%);
+    }
+    .about-photo-sub-2 {
+      background: linear-gradient(135deg, #b0c8d0 0%, #708090 100%);
+    }
+
+    .about-text .label {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      color: var(--brown);
+      background: rgba(139,69,19,.1);
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    .about-text h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      color: var(--brown-dark);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    .about-text p {
+      font-size: .95rem;
+      line-height: 1.9;
+      color: var(--gray-700);
+      margin-bottom: 20px;
+    }
+
+    .master-sign {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .master-sign p {
+      font-size: .85rem;
+      color: var(--gray-500);
+      margin-bottom: 4px;
+    }
+
+    .master-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--brown);
+      letter-spacing: .1em;
+    }
+
+    /* History timeline */
+    .about-timeline {
+      margin-top: 64px;
+    }
+
+    .timeline-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .timeline {
+      display: flex;
+      gap: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .timeline-item {
+      flex: 1;
+      min-width: 180px;
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gray-200);
+      z-index: 0;
+    }
+
+    .timeline-item:first-child::before { left: 50%; }
+    .timeline-item:last-child::before { right: 50%; }
+
+    .timeline-dot {
+      width: 36px;
+      height: 36px;
+      background: var(--brown);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-dot::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: var(--wheat);
+      border-radius: 50%;
+    }
+
+    .timeline-year {
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--brown);
+      letter-spacing: .1em;
+      margin-bottom: 8px;
+    }
+
+    .timeline-text {
+      font-size: .82rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       COMMITMENT
+    ============================================================ */
+    #commitment {
+      padding: 100px 0;
+      background: var(--brown);
+      color: var(--white);
+    }
+
+    #commitment .section-title {
+      color: var(--wheat);
+    }
+
+    #commitment .section-subtitle {
+      color: rgba(245,222,179,.6);
+    }
+
+    .commitment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .commitment-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(245,222,179,.2);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .commitment-card:hover {
+      background: rgba(255,255,255,.12);
+      transform: translateY(-4px);
+      border-color: rgba(245,222,179,.4);
+    }
+
+    .commitment-icon {
+      font-size: 3.5rem;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .commitment-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--wheat);
+      margin-bottom: 16px;
+      letter-spacing: .06em;
+    }
+
+    .commitment-card p {
+      font-size: .88rem;
+      color: rgba(255,255,255,.7);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .commitment-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .commitment-tag {
+      background: rgba(245,222,179,.15);
+      border: 1px solid rgba(245,222,179,.25);
+      color: var(--wheat);
+      font-size: .75rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 50px;
+      letter-spacing: .04em;
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    #testimonials {
+      padding: 100px 0;
+      background: var(--gray-100);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 5rem;
+      color: var(--wheat);
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    .stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 16px;
+    }
+
+    .star {
+      color: #f4a800;
+      font-size: 1.1rem;
+    }
+
+    .testimonial-text {
+      font-size: .92rem;
+      line-height: 1.8;
+      color: var(--gray-700);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--wheat) 0%, var(--brown-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .author-info p:first-child {
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .author-info p:last-child {
+      font-size: .78rem;
+      color: var(--gray-500);
+    }
+
+    /* ============================================================
+       ACCESS
+    ============================================================ */
+    #access {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .access-info h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--wheat);
+      letter-spacing: .06em;
+    }
+
+    .access-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+    }
+
+    .access-table th,
+    .access-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: .9rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .access-table th {
+      color: var(--gray-500);
+      font-weight: 500;
+      width: 120px;
+      white-space: nowrap;
+    }
+
+    .access-table td {
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .access-table td strong {
+      color: var(--red);
+    }
+
+    .access-station {
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      border-left: 4px solid var(--brown);
+    }
+
+    .access-station h4 {
+      font-size: .9rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--brown);
+    }
+
+    .access-station ul {
+      font-size: .85rem;
+      color: var(--gray-700);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .access-station ul li::before {
+      content: '▶ ';
+      color: var(--brown);
+      font-size: .7rem;
+    }
+
+    .map-placeholder {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      height: 400px;
+      background: var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--gray-500);
+      font-size: .85rem;
+      letter-spacing: .06em;
+    }
+
+    .map-placeholder .map-icon {
+      font-size: 3rem;
+    }
+
+    /* If iframe is used */
+    .map-placeholder iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact {
+      padding: 100px 0;
+      background: var(--wheat-light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 56px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      font-size: .9rem;
+      color: var(--gray-700);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-item-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text p:first-child {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--brown);
+      letter-spacing: .1em;
+      margin-bottom: 2px;
+    }
+
+    .contact-item-text p:last-child {
+      font-size: .9rem;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    form {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      margin-bottom: 8px;
+      letter-spacing: .04em;
+    }
+
+    .form-group label .required {
+      color: var(--red);
+      margin-left: 4px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 13px 16px;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: .9rem;
+      color: var(--text-main);
+      transition: border-color var(--transition);
+      background: var(--white);
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--brown);
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .form-submit .btn {
+      width: 100%;
+      text-align: center;
+      padding: 16px;
+      font-size: 1rem;
+    }
+
+    .form-note {
+      font-size: .78rem;
+      color: var(--gray-500);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--gray-700);
+      color: rgba(255,255,255,.7);
+      padding: 64px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand .footer-logo {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: .1em;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: .85rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.6);
+    }
+
+    .footer-sns {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .sns-btn {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .sns-btn:hover {
+      background: var(--brown);
+    }
+
+    .footer-col h4 {
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: .12em;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul li {
+      font-size: .83rem;
+      color: rgba(255,255,255,.55);
+    }
+
+    .footer-col ul li a {
+      color: rgba(255,255,255,.55);
+      transition: color var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--wheat);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: .78rem;
+      color: rgba(255,255,255,.35);
+    }
+
+    .footer-bottom a {
+      color: rgba(255,255,255,.5);
+      transition: color var(--transition);
+    }
+
+    .footer-bottom a:hover {
+      color: var(--wheat);
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .commitment-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .access-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 680px) {
+      nav, .nav-reserve { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+
+      #home { padding-top: 70px; }
+      .hero-main { letter-spacing: .05em; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .timeline { gap: 16px; }
+      .timeline-item::before { display: none; }
+
+      #menu, #about, #commitment, #testimonials, #access, #contact {
+        padding: 72px 0;
+      }
+    }
+
+    @media (max-width: 440px) {
+      form { padding: 28px 20px; }
+    }
+  </style>
+
+  <!-- Schema.org 構造化データ (AEO対応) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "手打ちうどん 讃岐の縁",
+    "alternateName": "讃岐の縁",
+    "url": "https://sanuki-en.example.com",
+    "image": "https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1200&q=80",
+    "description": "香川県高松市の本格手打ちさぬきうどん。創業30年、自家製手打ち麺と天然だしにこだわった一杯をご提供します。",
+    "telephone": "087-XXX-XXXX",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "丸亀町1-5",
+      "addressLocality": "高松市",
+      "addressRegion": "香川県",
+      "postalCode": "760-0000",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.3401,
+      "longitude": 134.0434
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "11:00",
+        "closes": "15:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday","Sunday"],
+        "opens": "10:30",
+        "closes": "15:30"
+      }
+    ],
+    "servesCuisine": ["さぬきうどん", "うどん", "日本料理"],
+    "priceRange": "¥",
+    "currenciesAccepted": "JPY",
+    "paymentAccepted": "Cash, Credit Card",
+    "menu": "https://sanuki-en.example.com/#menu",
+    "hasMap": "https://maps.google.com/?q=手打ちうどん+讃岐の縁+高松市",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127"
+    },
+    "sameAs": []
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム",       "item": "https://sanuki-en.example.com/" },
+      { "@type": "ListItem", "position": 2, "name": "メニュー",     "item": "https://sanuki-en.example.com/#menu" },
+      { "@type": "ListItem", "position": 3, "name": "お店について", "item": "https://sanuki-en.example.com/#about" },
+      { "@type": "ListItem", "position": 4, "name": "アクセス",     "item": "https://sanuki-en.example.com/#access" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">コンテンツへスキップ</a>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header id="header" role="banner">
+    <div class="inner">
+      <a href="#home" class="logo">
+        手打ちうどん 讃岐の縁
+        <span>SANUKI NO EN | 香川県高松市</span>
+      </a>
+
+      <nav aria-label="メインナビゲーション" id="nav">
+        <a href="#home">ホーム</a>
+        <a href="#menu">メニュー</a>
+        <a href="#about">お店について</a>
+        <a href="#commitment">こだわり</a>
+        <a href="#access">アクセス</a>
+        <a href="#contact">お問い合わせ</a>
+        <a href="#contact" class="nav-reserve">予約する</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-link">ホーム</a>
+    <a href="#menu" class="mobile-link">メニュー</a>
+    <a href="#about" class="mobile-link">お店について</a>
+    <a href="#commitment" class="mobile-link">こだわり</a>
+    <a href="#access" class="mobile-link">アクセス</a>
+    <a href="#contact" class="mobile-link">お問い合わせ</a>
+    <a href="#contact" class="mobile-link nav-reserve btn">予約する</a>
+  </div>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <main id="main-content">
+  <section id="home">
+    <div class="hero-deco hero-deco-1"></div>
+    <div class="hero-deco hero-deco-2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge fade-in">創業30年 ・ 香川県高松市</div>
+      <h1 class="hero-main fade-in fade-in-delay-1">
+        打つ、煮る、盛る。<br>
+        すべてに、<span class="highlight">魂を。</span>
+      </h1>
+      <p class="hero-sub fade-in fade-in-delay-2">
+        創業30年。一杯一杯、手を抜かない。<br>
+        それが讃岐の縁のうどんです。
+      </p>
+      <div class="hero-cta fade-in fade-in-delay-3">
+        <a href="#menu" class="btn btn-white">メニューを見る</a>
+        <a href="#access" class="btn btn-white-outline">アクセスを確認</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MENU
+  ============================================================ -->
+  <section id="menu">
+    <div class="container">
+      <h2 class="section-title fade-in">Menu</h2>
+      <p class="section-subtitle fade-in">こだわりの一杯</p>
+
+      <!-- Tab Nav -->
+      <div class="tab-nav fade-in">
+        <button class="tab-btn active" data-tab="hot"> 温かいうどん</button>
+        <button class="tab-btn" data-tab="cold"> 冷たいうどん</button>
+        <button class="tab-btn" data-tab="topping"> トッピング</button>
+      </div>
+
+      <!-- Hot -->
+      <div class="tab-panel active" id="tab-hot">
+        <div class="menu-grid">
+          <div class="menu-card fade-in">
+            <div class="menu-img"></div>
+            <div class="menu-body">
+              <p class="menu-name">かけうどん</p>
+              <p class="menu-desc">昆布・煮干し・かつお節の黄金だしを存分に味わう、讃岐うどんの原点。シンプルだからこそ、すべてが際立ちます。</p>
+              <p class="menu-price">¥400 <span>（税込）</span></p>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in fade-in-delay-1">
+            <div class="menu-img menu-img-3"></div>
+            <div class="menu-body">
+              <p class="menu-name">釜玉うどん</p>
+              <p class="menu-desc">釜から直接、玉子と絡めてお召し上がりいただく讃岐の定番。コシのある麺と濃厚な玉子が絶妙なハーモニーを奏でます。</p>
+              <p class="menu-price">¥500 <span>（税込）</span></p>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in fade-in-delay-2">
+            <div class="menu-img menu-img-4" style="position:relative">
+              
+              <span class="menu-badge">人気No.1</span>
+            </div>
+            <div class="menu-body">
+              <p class="menu-name">天ぷらうどん</p>
+              <p class="menu-desc">サクサクに揚げた海老天ぷらと、まろやかなだし汁の共演。毎日揚げたての天ぷらにこだわっています。</p>
+              <p class="menu-price">¥650 <span>（税込）</span></p>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in fade-in-delay-3">
+            <div class="menu-img" style="background:linear-gradient(135deg,#e8d0a0 0%,#b89040 100%);position:relative">
+              
+              <span class="menu-badge">季節限定</span>
+            </div>
+            <div class="menu-body">
+              <p class="menu-name">鴨南蛮うどん</p>
+              <p class="menu-desc">香り高い鴨肉とネギを合わせた冬の特別メニュー。芳醇な鴨だしが体の芯まで温めます。</p>
+              <p class="menu-price">¥820 <span>（税込）</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cold -->
+      <div class="tab-panel" id="tab-cold">
+        <div class="menu-grid">
+          <div class="menu-card fade-in">
+            <div class="menu-img menu-img-2"></div>
+            <div class="menu-body">
+              <p class="menu-name">ぶっかけうどん</p>
+              <p class="menu-desc">冷たく締めた麺に濃いめのつゆをかけていただく、讃岐うどんの定番スタイル。大根おろしとレモンがアクセント。</p>
+              <p class="menu-price">¥450 <span>（税込）</span></p>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in fade-in-delay-1">
+            <div class="menu-img menu-img-5"></div>
+            <div class="menu-body">
+              <p class="menu-name">ざるうどん</p>
+              <p class="menu-desc">丁寧に水で締めた麺をざるに盛り、特製つゆで味わうシンプルな一杯。麺そのものの旨みを存分にご堪能いただけます。</p>
+              <p class="menu-price">¥480 <span>（税込）</span></p>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in fade-in-delay-2">
+            <div class="menu-img" style="background:linear-gradient(135deg,#d0e0f0 0%,#9080c0 100%);position:relative">
+              
+              <span class="menu-badge">夏季限定</span>
+            </div>
+            <div class="menu-body">
+              <p class="menu-name">すだちぶっかけ</p>
+              <p class="menu-desc">さわやかなすだちをたっぷり使った夏のスペシャル。爽やかな酸味と香りが夏の食欲を刺激します。</p>
+              <p class="menu-price">¥580 <span>（税込）</span></p>
+            </div>
+          </div>
+
+          <div class="menu-card fade-in fade-in-delay-3">
+            <div class="menu-img" style="background:linear-gradient(135deg,#f0e0c0 0%,#c09050 100%)">
+              
+            </div>
+            <div class="menu-body">
+              <p class="menu-name">胡麻だれうどん</p>
+              <p class="menu-desc">香ばしく炒った胡麻を丁寧にすり下ろした特製だれを、冷たい麺に絡めてどうぞ。濃厚な味わいのご褒美の一杯。</p>
+              <p class="menu-price">¥520 <span>（税込）</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Topping -->
+      <div class="tab-panel" id="tab-topping">
+        <div class="topping-grid">
+          <div class="topping-card fade-in"><span class="topping-name">温泉玉子</span><span class="topping-price">¥80</span></div>
+          <div class="topping-card fade-in fade-in-delay-1"><span class="topping-name">海老天</span><span class="topping-price">¥150</span></div>
+          <div class="topping-card fade-in fade-in-delay-2"><span class="topping-name">かき揚げ</span><span class="topping-price">¥130</span></div>
+          <div class="topping-card fade-in"><span class="topping-name">ちくわ天</span><span class="topping-price">¥100</span></div>
+          <div class="topping-card fade-in fade-in-delay-1"><span class="topping-name">大根おろし</span><span class="topping-price">¥50</span></div>
+          <div class="topping-card fade-in fade-in-delay-2"><span class="topping-name">わかめ</span><span class="topping-price">¥50</span></div>
+          <div class="topping-card fade-in"><span class="topping-name">なると</span><span class="topping-price">¥40</span></div>
+          <div class="topping-card fade-in fade-in-delay-1"><span class="topping-name">油揚げ</span><span class="topping-price">¥70</span></div>
+          <div class="topping-card fade-in fade-in-delay-2"><span class="topping-name">とろろ</span><span class="topping-price">¥80</span></div>
+          <div class="topping-card fade-in"><span class="topping-name">明太子</span><span class="topping-price">¥120</span></div>
+          <div class="topping-card fade-in fade-in-delay-1"><span class="topping-name">ライス（小）</span><span class="topping-price">¥80</span></div>
+          <div class="topping-card fade-in fade-in-delay-2"><span class="topping-name">おにぎり</span><span class="topping-price">¥100</span></div>
+        </div>
+        <p style="text-align:center;color:var(--gray-500);font-size:.82rem;margin-top:28px;">※ トッピングは単品うどんへの追加注文です。季節によって内容が変わる場合があります。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title fade-in">About</h2>
+      <p class="section-subtitle fade-in">お店について</p>
+
+      <div class="about-grid">
+        <div class="fade-in">
+          <div class="about-photo">
+            <div class="about-photo-main"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&auto=format&fit=crop" alt="店内の様子" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
+          </div>
+          <div class="about-photos-sub">
+            <div class="about-photo-sub about-photo-sub-1" style="background:url(\'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&q=80&auto=format&fit=crop\') center/cover no-repeat;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);">製麺風景</div>
+            <div class="about-photo-sub about-photo-sub-2" style="background:url(\'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80&auto=format&fit=crop\') center/cover no-repeat;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);">だし仕込み</div>
+          </div>
+        </div>
+
+        <div class="about-text fade-in fade-in-delay-1">
+          <span class="label">OWNER'S MESSAGE</span>
+          <h2>一杯のうどんに、<br>すべての思いを込めて。</h2>
+          <p>
+            昭和の終わり頃、父が小さな製麺所を開いたのが始まりでした。「讃岐のうどんを食べて、笑顔になってほしい」というその一言が、私の原点です。
+          </p>
+          <p>
+            毎朝4時に起きて麺を打ち、だしを仕込む。その繰り返しを30年以上続けてきました。機械化や効率化という言葉とは無縁の世界ですが、お客様が「おいしい」とおっしゃるたびに、すべての苦労が報われる気がします。
+          </p>
+          <p>
+            香川のうどんは、日常の食べ物です。特別な日だけでなく、ふとしたランチや帰り道に「また行こう」と思っていただけるような、そんなお店であり続けたいと思っています。
+          </p>
+
+          <div class="master-sign">
+            <p>讃岐の縁 店主</p>
+            <p class="master-name">田中 正（たなか ただし）</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-timeline fade-in">
+        <p class="timeline-title">創業のあゆみ</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">1994年</p>
+            <p class="timeline-text">高松市にて小さな製麺所として創業</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">1998年</p>
+            <p class="timeline-text">飲食店として現在地に移転・拡張</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2008年</p>
+            <p class="timeline-text">国産小麦・天然だしへ全面切替</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2018年</p>
+            <p class="timeline-text">2代目・田中 誠が製麺を継承</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2024年</p>
+            <p class="timeline-text">創業30周年を迎える</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMMITMENT
+  ============================================================ -->
+  <section id="commitment">
+    <div class="container">
+      <h2 class="section-title fade-in">Commitment</h2>
+      <p class="section-subtitle fade-in" style="color:rgba(245,222,179,.6)">三つのこだわり</p>
+
+      <div class="commitment-grid">
+        <div class="commitment-card fade-in">
+          <span class="commitment-icon"></span>
+          <h3>麺へのこだわり</h3>
+          <p>
+            香川県産の最高級小麦「さぬきの夢」を使用。職人が毎朝手打ちし、2時間かけてゆっくりと熟成させることで、あのもちもちとしたコシが生まれます。機械には出せない手打ちの温もりを、ぜひご体感ください。
+          </p>
+          <div class="commitment-tags">
+            <span class="commitment-tag">手打ち製法</span>
+            <span class="commitment-tag">毎朝製造</span>
+            <span class="commitment-tag">2時間熟成</span>
+          </div>
+        </div>
+
+        <div class="commitment-card fade-in fade-in-delay-1">
+          <span class="commitment-icon"></span>
+          <h3>だしへのこだわり</h3>
+          <p>
+            長崎産の煮干し、北海道産の昆布、枕崎産のかつお節という三種の素材を丁寧に合わせた天然だし。化学調味料は一切使用せず、素材そのものの旨みだけで仕上げます。このだしを守るために、毎日欠かさず手仕込みを続けています。
+          </p>
+          <div class="commitment-tags">
+            <span class="commitment-tag">煮干し</span>
+            <span class="commitment-tag">昆布</span>
+            <span class="commitment-tag">かつお節</span>
+          </div>
+        </div>
+
+        <div class="commitment-card fade-in fade-in-delay-2">
+          <span class="commitment-icon"></span>
+          <h3>食材へのこだわり</h3>
+          <p>
+            香川県産の小麦はもちろん、野菜や卵はすべて地元農家から直接仕入れています。朝に収穫された新鮮な食材をその日のうちに使い切る。それが讃岐の縁のルールです。地産地消で、地域とともに歩み続けます。
+          </p>
+          <div class="commitment-tags">
+            <span class="commitment-tag">香川県産小麦</span>
+            <span class="commitment-tag">地元農家直送</span>
+            <span class="commitment-tag">無添加</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+  ============================================================ -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title fade-in">Reviews</h2>
+      <p class="section-subtitle fade-in">お客様の声</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="stars">
+            <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+          </div>
+          <p class="testimonial-text">
+            かけうどんのシンプルな美しさに感動しました。だしの香りが口に広がった瞬間、高松に来て本当によかったと思いました。コシのある麺と合わさって最高の一杯でした。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">田</div>
+            <div class="author-info">
+              <p>田村 さおり 様</p>
+              <p>大阪府 ・ 30代女性</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in fade-in-delay-1">
+          <div class="stars">
+            <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+          </div>
+          <p class="testimonial-text">
+            毎週通っています。天ぷらうどんの海老天がいつもサクサクで感動します。スタッフの方々もとても親切で、家族みんなが大好きなお店です。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">中</div>
+            <div class="author-info">
+              <p>中島 健太 様</p>
+              <p>香川県高松市 ・ 40代男性</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in fade-in-delay-2">
+          <div class="stars">
+            <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+          </div>
+          <p class="testimonial-text">
+            讃岐うどんを食べ歩いてきましたが、ここのぶっかけはずば抜けていました。麺のコシとだしのバランスが絶妙で、一口食べた瞬間に「これだ！」となりました。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">山</div>
+            <div class="author-info">
+              <p>山本 和子 様</p>
+              <p>東京都 ・ 50代女性</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="stars">
+            <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+          </div>
+          <p class="testimonial-text">
+            出張で高松に来るたびに必ず寄ります。釜玉うどんが特に好きで、玉子と麺のからみ具合がたまりません。次の出張も讃岐の縁に寄るのが楽しみです。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">鈴</div>
+            <div class="author-info">
+              <p>鈴木 一郎 様</p>
+              <p>愛知県 ・ 40代男性</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in fade-in-delay-1">
+          <div class="stars">
+            <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+          </div>
+          <p class="testimonial-text">
+            子どもがうどんのコシに驚いていました。「このうどん、なんかちがう！」と目を輝かせて食べていた姿が忘れられません。家族みんなで楽しめるお店です。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">林</div>
+            <div class="author-info">
+              <p>林 美穂 様</p>
+              <p>香川県丸亀市 ・ 30代女性</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ACCESS
+  ============================================================ -->
+  <section id="access">
+    <div class="container">
+      <h2 class="section-title fade-in">Access</h2>
+      <p class="section-subtitle fade-in">アクセス</p>
+
+      <div class="access-grid">
+        <div class="fade-in">
+          <h3>店舗情報</h3>
+          <table class="access-table">
+            <tr>
+              <th>店名</th>
+              <td>手打ちうどん 讃岐の縁</td>
+            </tr>
+            <tr>
+              <th>住所</th>
+              <td>〒760-0000<br>香川県高松市丸亀町12-3</td>
+            </tr>
+            <tr>
+              <th>電話</th>
+              <td>087-XXX-XXXX</td>
+            </tr>
+            <tr>
+              <th>営業時間</th>
+              <td>11:00 〜 15:00<br><small style="color:var(--gray-500)">（売り切れ次第終了）</small></td>
+            </tr>
+            <tr>
+              <th>定休日</th>
+              <td><strong>木曜日</strong>、年末年始</td>
+            </tr>
+            <tr>
+              <th>席数</th>
+              <td>30席（カウンター8席・テーブル22席）</td>
+            </tr>
+            <tr>
+              <th>駐車場</th>
+              <td>近隣のコインパーキングをご利用ください</td>
+            </tr>
+          </table>
+
+          <div class="access-station">
+            <h4>最寄り駅からのアクセス</h4>
+            <ul>
+              <li>JR高松駅より徒歩約10分</li>
+              <li>ことでん片原町駅より徒歩約5分</li>
+              <li>高松丸亀町商店街内・アーケード沿い</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="map-placeholder fade-in fade-in-delay-1">
+          <iframe src="" title="Google Maps" loading="lazy"></iframe>
+          <span class="map-icon"></span>
+          <span>Google マップ（要設置）</span>
+          <small style="font-size:.75rem;opacity:.6">香川県高松市丸亀町12-3</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title fade-in">Contact</h2>
+      <p class="section-subtitle fade-in">お問い合わせ</p>
+
+      <div class="contact-grid">
+        <div class="fade-in">
+          <h3>お気軽にご連絡ください</h3>
+          <p>
+            ご予約・団体のお問い合わせ・メニューに関するご質問など、何でもお気軽にお問い合わせください。通常2営業日以内にご返信いたします。
+          </p>
+
+          <div class="contact-detail">
+            <div class="contact-item">
+              <span class="contact-item-icon"></span>
+              <div class="contact-item-text">
+                <p>お電話</p>
+                <p>087-XXX-XXXX</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon"></span>
+              <div class="contact-item-text">
+                <p>営業時間</p>
+                <p>11:00〜15:00（木曜定休）</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon"></span>
+              <div class="contact-item-text">
+                <p>所在地</p>
+                <p>香川県高松市丸亀町12-3</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-icon"></span>
+              <div class="contact-item-text">
+                <p>メールアドレス</p>
+                <p>info@sanuki-no-en.example.jp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in fade-in-delay-1">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">お名前 <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="田中 太郎" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">お電話番号</label>
+                <input type="tel" id="phone" name="phone" placeholder="090-XXXX-XXXX">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">お問い合わせ種別</label>
+              <select id="subject" name="subject">
+                <option value="">選択してください</option>
+                <option value="reserve">ご予約・団体予約</option>
+                <option value="menu">メニューについて</option>
+                <option value="allergy">アレルギー・食材について</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">メッセージ <span class="required">*</span></label>
+              <textarea id="message" name="message" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">送信する →</button>
+            </div>
+            <p class="form-note">※ このフォームはデモ表示のみです。実際の送信機能は設置後に有効になります。</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="footer-logo">手打ちうどん 讃岐の縁</p>
+          <p>
+            〒760-0000 香川県高松市丸亀町12-3<br>
+            Tel: 087-XXX-XXXX<br>
+            営業時間: 11:00〜15:00（木曜定休）
+          </p>
+          <div class="footer-sns">
+            <div class="sns-btn" title="Instagram"></div>
+            <div class="sns-btn" title="Facebook"></div>
+            <div class="sns-btn" title="X（Twitter）"></div>
+            <div class="sns-btn" title="LINE"></div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>MENU</h4>
+          <ul>
+            <li><a href="#home">ホーム</a></li>
+            <li><a href="#menu">メニュー</a></li>
+            <li><a href="#about">お店について</a></li>
+            <li><a href="#commitment">こだわり</a></li>
+            <li><a href="#access">アクセス</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>INFO</h4>
+          <ul>
+            <li>営業時間: 11:00〜15:00</li>
+            <li>定休日: 木曜日</li>
+            <li>席数: 30席</li>
+            <li>TEL: 087-XXX-XXXX</li>
+            <li>JR高松駅 徒歩10分</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 手打ちうどん 讃岐の縁. All Rights Reserved.</p>
+        <p>Produced by <a href="https://d-tecnoweb.example.jp" target="_blank" rel="noopener">D-tecnoWEB</a></p>
+      </div>
+    </div>
+  </main>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // ---- Sticky Header ----
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // ---- Hamburger Menu ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!expanded));
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ---- Tab Switching ----
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        document.getElementById('tab-' + target).classList.add('active');
+
+        // Re-trigger fade-in for newly shown items
+        document.querySelectorAll('#tab-' + target + ' .fade-in').forEach(el => {
+          el.classList.remove('visible');
+          setTimeout(() => el.classList.add('visible'), 50);
+        });
+      });
+    });
+
+    // ---- Smooth Scroll (for older browsers) ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          const offsetTop = target.getBoundingClientRect().top + window.scrollY - 70;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ---- IntersectionObserver for fade-in ----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ---- Form submission handler ----
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = '送信しました ';
+      btn.style.background = '#2d8a50';
+      btn.style.borderColor = '#2d8a50';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = '送信する →';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    }
+
+    // ---- Map placeholder: remove iframe overlay if src is empty ----
+    const mapIframe = document.querySelector('.map-placeholder iframe');
+    if (mapIframe && !mapIframe.src) {
+      mapIframe.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

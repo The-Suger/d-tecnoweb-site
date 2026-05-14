@@ -884,22 +884,9 @@
     }
 
     /* ============================================================
-       WORKS
+       WORKS (トップ：横スクロールマーキー)
     ============================================================ */
-    #works { background: var(--white); }
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--gray-300);
-      border: 1px solid var(--gray-300);
-    }
-    .work-card {
-      background: var(--white);
-      padding: 40px 36px;
-      transition: background 0.2s;
-    }
-    .work-card:hover { background: var(--gray-50); }
+    #works { background: var(--white); overflow: hidden; }
     .work-label {
       display: inline-block;
       font-size: 0.68rem;
@@ -907,39 +894,104 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gray-500);
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
-    .work-card h3 {
-      font-size: 1rem;
+    .work-sample-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #92400e;
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      padding: 2px 7px;
+      border-radius: 2px;
+      margin-left: 7px;
+      vertical-align: middle;
+    }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+    .work-tag {
+      font-size: 0.68rem;
+      color: var(--gray-700);
+      border: 1px solid var(--gray-300);
+      padding: 3px 9px;
+      border-radius: 2px;
+    }
+    .work-link {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .work-link:hover { text-decoration: underline; }
+
+    /* マーキーラッパー */
+    .works-marquee-wrap {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+    }
+    .works-marquee-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: marquee 36s linear infinite;
+    }
+    .works-marquee-wrap:hover .works-marquee-track { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .works-mcard {
+      flex-shrink: 0;
+      width: 290px;
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      padding: 28px 24px 22px;
+      transition: background 0.2s, transform 0.25s, box-shadow 0.25s;
+      cursor: default;
+    }
+    .works-mcard:hover {
+      background: var(--gray-50);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .works-mcard h3 {
+      font-size: 0.9rem;
       font-weight: 700;
       color: var(--black);
       margin-bottom: 10px;
+      line-height: 1.45;
     }
-    .work-card p {
-      font-size: 0.875rem;
+    .works-mcard p {
+      font-size: 0.78rem;
       color: var(--gray-500);
       line-height: 1.8;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
-    .work-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .work-link { display: inline-block; margin-top: 14px; font-size: 0.85rem; font-weight: 600; color: var(--primary); text-decoration: none; }
-    .work-link:hover { text-decoration: underline; }
-    .work-tag {
-      font-size: 0.7rem;
-      color: var(--gray-700);
-      border: 1px solid var(--gray-300);
-      padding: 4px 10px;
-      border-radius: 2px;
-    }
-    .works-placeholder {
-      grid-column: 1 / -1;
-      background: var(--white);
-      padding: 60px;
+    .works-view-all {
       text-align: center;
-      color: var(--gray-500);
-      font-size: 0.875rem;
-      line-height: 1.9;
+      margin-top: 52px;
     }
+    .works-view-all a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--black);
+      text-decoration: none;
+      border: 1px solid var(--black);
+      padding: 13px 36px;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .works-view-all a:hover { background: var(--black); color: var(--white); }
 
     /* ============================================================
        COMPANY
@@ -1280,6 +1332,7 @@
         <li><a href="#mission">ミッション</a></li>
         <li><a href="#services">事業内容</a></li>
         <li><a href="#features">弊社の強み</a></li>
+        <li><a href="works.html">制作実績</a></li>
         <li><a href="posts/index.html">お知らせ</a></li>
         <li><a href="price.html">料金</a></li>
         <li><a href="#about">私たちについて</a></li>
@@ -1299,6 +1352,7 @@
       <a href="#mission" class="menu-link">ミッション</a>
       <a href="#services" class="menu-link">事業内容</a>
       <a href="#features" class="menu-link">弊社の強み</a>
+      <a href="works.html" class="menu-link">制作実績</a>
       <a href="posts/index.html" class="menu-link">お知らせ</a>
       <a href="price.html" class="menu-link">料金</a>
       <a href="#about" class="menu-link">私たちについて</a>
@@ -1605,36 +1659,114 @@
 
   <!-- WORKS -->
   <section id="works">
-    <div class="container">
+    <div class="container" style="margin-bottom:48px;">
       <span class="sec-label">Works</span>
       <h2 class="sec-title">制作実績</h2>
-      <div class="works-grid" data-animate>
-        <div class="work-card">
+    </div>
+    <div class="works-marquee-wrap">
+      <div class="works-marquee-track">
+        <!-- オリジナル -->
+        <div class="works-mcard">
           <span class="work-label">Case #01</span>
           <h3>D-tecnoWEB 公式サイト</h3>
           <p>本サイト自体をClaude Codeで制作。明確な料金体系でシンプルに仕上げました。</p>
-          <div class="work-tags">
-            <span class="work-tag">HP制作</span>
-            <span class="work-tag">Claude Code</span>
-            <span class="work-tag">レスポンシブ対応</span>
-          </div>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">Claude Code</span><span class="work-tag">レスポンシブ対応</span></div>
         </div>
-        <div class="work-card">
+        <div class="works-mcard">
           <span class="work-label">Case #02</span>
           <h3>下川部獅子組 公式サイト</h3>
-          <p>伝統芸能保存会の情報発信サイトを半日で構築。モダンなUI/UXで文化継承のデジタル化を実現。公開後のアクセス・問い合わせ数を継続モニタリング中。</p>
-          <div class="work-tags">
-            <span class="work-tag">HP制作</span>
-            <span class="work-tag">超速納品（0.5日）</span>
-            <span class="work-tag">レスポンシブ対応</span>
-            <span class="work-tag">公開後フォロー</span>
-          </div>
+          <p>伝統芸能保存会の情報発信サイトを半日で構築。モダンなUI/UXで文化継承のデジタル化を実現。</p>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">超速納品</span><span class="work-tag">レスポンシブ対応</span></div>
           <a href="https://shimokawabe-shishigumi.vercel.app/" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
         </div>
-        <div class="works-placeholder">
-          制作実績を随時追加予定です。<br>まずはお気軽にご相談ください。
+        <div class="works-mcard">
+          <span class="work-label">Case #03</span><span class="work-sample-badge">サンプル</span>
+          <h3>はな整骨院 ホームページ</h3>
+          <p>整骨院向けHPのサンプル。腰痛・肩こり・交通事故対応を訴求し、地域集客導線を整備。</p>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">整骨院</span><span class="work-tag">レスポンシブ対応</span></div>
+          <a href="outputs/seikotsu-hp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #04</span><span class="work-sample-badge">サンプル</span>
+          <h3>はな整骨院 ランディングページ</h3>
+          <p>整骨院の新規患者獲得に特化したLPサンプル。痛みへの共感から予約までの導線をシンプルに設計。</p>
+          <div class="work-tags"><span class="work-tag">LP制作</span><span class="work-tag">整骨院</span><span class="work-tag">コンバージョン重視</span></div>
+          <a href="outputs/seikotsu-lp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #05</span><span class="work-sample-badge">サンプル</span>
+          <h3>手打ちうどん 讃岐の縁 ホームページ</h3>
+          <p>飲食店向けHPサンプル。メニュー・アクセス・お知らせを網羅した情報発信型サイト。</p>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">飲食店</span><span class="work-tag">レスポンシブ対応</span></div>
+          <a href="outputs/udon-hp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #06</span><span class="work-sample-badge">サンプル</span>
+          <h3>手打ちうどん 讃岐の縁 ランディングページ</h3>
+          <p>飲食店向けLPサンプル。香川ならではの雰囲気を活かしたビジュアルで食欲を刺激する設計。</p>
+          <div class="work-tags"><span class="work-tag">LP制作</span><span class="work-tag">飲食店</span><span class="work-tag">コンバージョン重視</span></div>
+          <a href="outputs/udon-lp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #07</span><span class="work-sample-badge">サンプル</span>
+          <h3>はな整骨院 Next.js サイト</h3>
+          <p>整骨院HPをNext.js＋Tailwind CSSで実装。Vercelにデプロイ済み。</p>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">Next.js</span><span class="work-tag">Tailwind CSS</span><span class="work-tag">Vercel</span></div>
+          <a href="https://seikotsu-hp-next.vercel.app" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <!-- 複製（シームレスループ用） -->
+        <div class="works-mcard">
+          <span class="work-label">Case #01</span>
+          <h3>D-tecnoWEB 公式サイト</h3>
+          <p>本サイト自体をClaude Codeで制作。明確な料金体系でシンプルに仕上げました。</p>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">Claude Code</span><span class="work-tag">レスポンシブ対応</span></div>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #02</span>
+          <h3>下川部獅子組 公式サイト</h3>
+          <p>伝統芸能保存会の情報発信サイトを半日で構築。モダンなUI/UXで文化継承のデジタル化を実現。</p>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">超速納品</span><span class="work-tag">レスポンシブ対応</span></div>
+          <a href="https://shimokawabe-shishigumi.vercel.app/" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #03</span><span class="work-sample-badge">サンプル</span>
+          <h3>はな整骨院 ホームページ</h3>
+          <p>整骨院向けHPのサンプル。腰痛・肩こり・交通事故対応を訴求し、地域集客導線を整備。</p>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">整骨院</span><span class="work-tag">レスポンシブ対応</span></div>
+          <a href="outputs/seikotsu-hp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #04</span><span class="work-sample-badge">サンプル</span>
+          <h3>はな整骨院 ランディングページ</h3>
+          <p>整骨院の新規患者獲得に特化したLPサンプル。痛みへの共感から予約までの導線をシンプルに設計。</p>
+          <div class="work-tags"><span class="work-tag">LP制作</span><span class="work-tag">整骨院</span><span class="work-tag">コンバージョン重視</span></div>
+          <a href="outputs/seikotsu-lp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #05</span><span class="work-sample-badge">サンプル</span>
+          <h3>手打ちうどん 讃岐の縁 ホームページ</h3>
+          <p>飲食店向けHPサンプル。メニュー・アクセス・お知らせを網羅した情報発信型サイト。</p>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">飲食店</span><span class="work-tag">レスポンシブ対応</span></div>
+          <a href="outputs/udon-hp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #06</span><span class="work-sample-badge">サンプル</span>
+          <h3>手打ちうどん 讃岐の縁 ランディングページ</h3>
+          <p>飲食店向けLPサンプル。香川ならではの雰囲気を活かしたビジュアルで食欲を刺激する設計。</p>
+          <div class="work-tags"><span class="work-tag">LP制作</span><span class="work-tag">飲食店</span><span class="work-tag">コンバージョン重視</span></div>
+          <a href="outputs/udon-lp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+        <div class="works-mcard">
+          <span class="work-label">Case #07</span><span class="work-sample-badge">サンプル</span>
+          <h3>はな整骨院 Next.js サイト</h3>
+          <p>整骨院HPをNext.js＋Tailwind CSSで実装。Vercelにデプロイ済み。</p>
+          <div class="work-tags"><span class="work-tag">HP制作</span><span class="work-tag">Next.js</span><span class="work-tag">Tailwind CSS</span><span class="work-tag">Vercel</span></div>
+          <a href="https://seikotsu-hp-next.vercel.app" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
         </div>
       </div>
+    </div>
+    <div class="works-view-all">
+      <a href="works.html">制作実績をすべて見る →</a>
     </div>
   </section>
 
@@ -1738,6 +1870,7 @@
             <a href="contact.html">お問い合わせ</a>
           </div>
           <div class="footer-nav-row">
+            <a href="works.html">制作実績</a>
             <a href="posts/index.html">お知らせ</a>
             <a href="#about">私たちについて</a>
             <a href="#company">会社概要</a>

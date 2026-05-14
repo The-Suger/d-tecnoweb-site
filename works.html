@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>制作実績 | D-tecnoWEB</title>
+  <meta name="description" content="D-tecnoWEBの制作実績一覧。整骨院・飲食店・地域団体など香川県内外のWeb制作事例をご紹介します。">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #111111;
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+      --black:    #0f1f3d;
+      --white:    #ffffff;
+      --gray-50:  #f9f9f9;
+      --gray-100: #f2f2f2;
+      --gray-200: #e5e5e5;
+      --gray-300: #dddddd;
+      --gray-500: #888888;
+      --gray-700: #444444;
+      --gray-900: #0f1f3d;
+      --primary:  #2563EB;
+      --max-w:    1100px;
+    }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 48px; }
+
+    /* NAV */
+    #site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-300);
+    }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 48px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-img { height: 34px; width: auto; object-fit: contain; }
+    .nav-logo-text { font-size: 1rem; font-weight: 900; color: var(--black); letter-spacing: 0.02em; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; color: var(--gray-700); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--black); }
+    .nav-links a.active { color: var(--black); font-weight: 700; }
+    .nav-cta {
+      background: var(--black); color: var(--white) !important;
+      font-size: 0.82rem !important; font-weight: 700;
+      padding: 10px 22px; border-radius: 4px; text-decoration: none;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #333 !important; }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      align-items: center; gap: 5px; width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer; padding: 4px; z-index: 200;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px; background: var(--black);
+      border-radius: 2px; transition: transform 0.3s, opacity 0.3s; transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 150; pointer-events: none;
+    }
+    .mobile-menu.open { pointer-events: auto; }
+    .mobile-menu-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background 0.3s; }
+    .mobile-menu.open .mobile-menu-overlay { background: rgba(0,0,0,0.4); }
+    .mobile-menu-drawer {
+      position: absolute; top: 0; right: 0; bottom: 0; width: 280px;
+      background: var(--white); padding: 80px 32px 40px;
+      transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      display: flex; flex-direction: column;
+    }
+    .mobile-menu.open .mobile-menu-drawer { transform: translateX(0); }
+    .mobile-menu-drawer a {
+      display: block; font-size: 1rem; font-weight: 600; color: var(--gray-900);
+      text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--gray-200);
+      transition: color 0.2s;
+    }
+    .mobile-menu-drawer a:hover { color: var(--primary); }
+    .mobile-menu-drawer .mobile-cta {
+      margin-top: 24px; background: var(--black); color: var(--white) !important;
+      text-align: center; border-radius: 4px; border-bottom: none; padding: 14px;
+    }
+    .mobile-menu-drawer .mobile-cta:hover { background: #333; }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 140px 0 80px;
+      background: var(--gray-50);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .page-header-label {
+      display: block; font-size: 0.7rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gray-500); margin-bottom: 14px;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
+      color: var(--black); line-height: 1.2; margin-bottom: 16px;
+    }
+    .page-header p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.85; }
+
+    /* FILTER */
+    .works-filter {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      padding: 40px 0 0;
+    }
+    .filter-btn {
+      font-size: 0.78rem; font-weight: 700; padding: 7px 18px;
+      border: 1px solid var(--gray-300); border-radius: 2px;
+      background: var(--white); color: var(--gray-700);
+      cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--black); color: var(--white); border-color: var(--black);
+    }
+
+    /* WORKS GRID */
+    .works-section { padding: 60px 0 120px; }
+    .works-note {
+      font-size: 0.78rem; color: var(--gray-500);
+      padding: 10px 16px; background: var(--gray-50);
+      border: 1px solid var(--gray-200); border-radius: 4px;
+      margin-bottom: 40px;
+    }
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--gray-300);
+      border: 1px solid var(--gray-300);
+    }
+    .work-card {
+      background: var(--white); padding: 36px 32px;
+      transition: background 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .work-card:hover { background: var(--gray-50); }
+    .work-card-top { flex: 1; }
+    .work-label {
+      display: inline-block; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gray-500); margin-bottom: 12px;
+    }
+    .work-sample-badge {
+      display: inline-block; font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.06em; color: #92400e;
+      background: #fef3c7; border: 1px solid #f59e0b;
+      padding: 2px 7px; border-radius: 2px;
+      margin-left: 7px; vertical-align: middle;
+    }
+    .work-card h3 {
+      font-size: 1rem; font-weight: 700; color: var(--black);
+      margin-bottom: 10px; line-height: 1.45;
+    }
+    .work-card p {
+      font-size: 0.875rem; color: var(--gray-500);
+      line-height: 1.85; margin-bottom: 18px;
+    }
+    .work-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 18px; }
+    .work-tag {
+      font-size: 0.68rem; color: var(--gray-700);
+      border: 1px solid var(--gray-300); padding: 3px 9px; border-radius: 2px;
+    }
+    .work-link {
+      display: inline-block; font-size: 0.85rem; font-weight: 600;
+      color: var(--primary); text-decoration: none; margin-top: auto;
+    }
+    .work-link:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { background: var(--black); padding: 64px 48px 32px; }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; }
+    .footer-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 40px; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 28px;
+    }
+    .footer-logo { font-size: 1.1rem; font-weight: 900; color: var(--white); display: block; margin-bottom: 16px; }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a {
+      width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .footer-social a:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+    .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
+    .footer-nav { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+    .footer-nav-row { display: flex; gap: 24px; flex-wrap: wrap; justify-content: flex-end; }
+    .footer-nav a { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+    /* フェードイン */
+    [data-animate] { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    [data-animate].visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .container { padding: 0 24px; }
+      .nav-inner { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu { display: block; }
+      .page-header { padding: 110px 0 56px; }
+      footer { padding: 48px 24px 28px; }
+      .footer-inner { padding: 0; }
+      .footer-top { flex-direction: column; }
+      .footer-nav { align-items: flex-start; }
+      .footer-nav-row { justify-content: flex-start; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .works-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 901px) and (max-width: 1100px) {
+      .works-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="D-tecnoWEB" class="nav-logo-img" loading="eager" decoding="async" onerror="this.style.display='none'">
+        <span class="nav-logo-text">D-tecnoWEB</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#mission">ミッション</a></li>
+        <li><a href="index.html#services">事業内容</a></li>
+        <li><a href="index.html#features">弊社の強み</a></li>
+        <li><a href="works.html" class="active">制作実績</a></li>
+        <li><a href="posts/index.html">お知らせ</a></li>
+        <li><a href="price.html">料金</a></li>
+        <li><a href="index.html#about">私たちについて</a></li>
+        <li><a href="index.html#company">会社概要</a></li>
+        <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- モバイルメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu-drawer">
+      <a href="index.html#mission" class="menu-link">ミッション</a>
+      <a href="index.html#services" class="menu-link">事業内容</a>
+      <a href="index.html#features" class="menu-link">弊社の強み</a>
+      <a href="works.html" class="menu-link">制作実績</a>
+      <a href="posts/index.html" class="menu-link">お知らせ</a>
+      <a href="price.html" class="menu-link">料金</a>
+      <a href="index.html#about" class="menu-link">私たちについて</a>
+      <a href="index.html#company" class="menu-link">会社概要</a>
+      <a href="contact.html" class="mobile-cta menu-link">無料相談・お問い合わせ</a>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <span class="page-header-label">Works</span>
+      <h1>制作実績</h1>
+      <p>D-tecnoWEBが手がけたWebサイト制作の事例をご紹介します。<br>整骨院・飲食店・地域団体など、業種を問わず対応しています。</p>
+      <div class="works-filter" id="filterWrap">
+        <button class="filter-btn active" data-filter="all">すべて</button>
+        <button class="filter-btn" data-filter="HP制作">HP制作</button>
+        <button class="filter-btn" data-filter="LP制作">LP制作</button>
+        <button class="filter-btn" data-filter="Next.js">Next.js</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKS -->
+  <section class="works-section">
+    <div class="container">
+      <p class="works-note">※ Case #03〜#07 はポートフォリオ用のサンプルサイトです。実在の店舗・企業とは関係ありません。</p>
+      <div class="works-grid" id="worksGrid" data-animate>
+
+        <div class="work-card" data-tags="HP制作">
+          <div class="work-card-top">
+            <span class="work-label">Case #01</span>
+            <h3>D-tecnoWEB 公式サイト</h3>
+            <p>本サイト自体をClaude Codeで制作。明確な料金体系と成果重視の設計で、問い合わせ導線をシンプルに仕上げました。</p>
+            <div class="work-tags">
+              <span class="work-tag">HP制作</span>
+              <span class="work-tag">Claude Code</span>
+              <span class="work-tag">レスポンシブ対応</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card" data-tags="HP制作">
+          <div class="work-card-top">
+            <span class="work-label">Case #02</span>
+            <h3>下川部獅子組 公式サイト</h3>
+            <p>伝統芸能保存会の情報発信サイトを半日で構築。モダンなUI/UXで文化継承のデジタル化を実現。公開後のアクセス・問い合わせ数を継続モニタリング中。</p>
+            <div class="work-tags">
+              <span class="work-tag">HP制作</span>
+              <span class="work-tag">超速納品（0.5日）</span>
+              <span class="work-tag">レスポンシブ対応</span>
+              <span class="work-tag">公開後フォロー</span>
+            </div>
+          </div>
+          <a href="https://shimokawabe-shishigumi.vercel.app/" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+
+        <div class="work-card" data-tags="HP制作">
+          <div class="work-card-top">
+            <span class="work-label">Case #03</span><span class="work-sample-badge">サンプル</span>
+            <h3>はな整骨院 ホームページ</h3>
+            <p>整骨院向けホームページのサンプル制作。腰痛・肩こり・交通事故対応を訴求し、地域での集客導線を整備。問い合わせボタンを随所に配置しコンバージョンを意識。</p>
+            <div class="work-tags">
+              <span class="work-tag">HP制作</span>
+              <span class="work-tag">整骨院・治療院</span>
+              <span class="work-tag">レスポンシブ対応</span>
+            </div>
+          </div>
+          <a href="outputs/seikotsu-hp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+
+        <div class="work-card" data-tags="LP制作">
+          <div class="work-card-top">
+            <span class="work-label">Case #04</span><span class="work-sample-badge">サンプル</span>
+            <h3>はな整骨院 ランディングページ</h3>
+            <p>整骨院の新規患者獲得に特化したLPのサンプル。痛みへの共感から予約までの導線をシンプルに設計し、離脱率を下げる構成を採用。</p>
+            <div class="work-tags">
+              <span class="work-tag">LP制作</span>
+              <span class="work-tag">整骨院・治療院</span>
+              <span class="work-tag">コンバージョン重視</span>
+            </div>
+          </div>
+          <a href="outputs/seikotsu-lp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+
+        <div class="work-card" data-tags="HP制作">
+          <div class="work-card-top">
+            <span class="work-label">Case #05</span><span class="work-sample-badge">サンプル</span>
+            <h3>手打ちうどん 讃岐の縁 ホームページ</h3>
+            <p>香川・高松の本格さぬきうどん店の公式サイトサンプル。メニュー・アクセス・お知らせを網羅した情報発信型HP。</p>
+            <div class="work-tags">
+              <span class="work-tag">HP制作</span>
+              <span class="work-tag">飲食店</span>
+              <span class="work-tag">レスポンシブ対応</span>
+            </div>
+          </div>
+          <a href="outputs/udon-hp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+
+        <div class="work-card" data-tags="LP制作">
+          <div class="work-card-top">
+            <span class="work-label">Case #06</span><span class="work-sample-badge">サンプル</span>
+            <h3>手打ちうどん 讃岐の縁 ランディングページ</h3>
+            <p>うどん店の来店促進に特化したLPサンプル。香川ならではの雰囲気を活かしたビジュアルで食欲を刺激する設計。</p>
+            <div class="work-tags">
+              <span class="work-tag">LP制作</span>
+              <span class="work-tag">飲食店</span>
+              <span class="work-tag">コンバージョン重視</span>
+            </div>
+          </div>
+          <a href="outputs/udon-lp.html" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+
+        <div class="work-card" data-tags="HP制作 Next.js">
+          <div class="work-card-top">
+            <span class="work-label">Case #07</span><span class="work-sample-badge">サンプル</span>
+            <h3>はな整骨院 Next.js サイト</h3>
+            <p>整骨院向けホームページをNext.js＋Tailwind CSSで実装したサンプル。Vercelにデプロイ済みで本番環境での動作を確認可能。</p>
+            <div class="work-tags">
+              <span class="work-tag">HP制作</span>
+              <span class="work-tag">Next.js</span>
+              <span class="work-tag">Tailwind CSS</span>
+              <span class="work-tag">Vercel</span>
+            </div>
+          </div>
+          <a href="https://seikotsu-hp-next.vercel.app" target="_blank" rel="noopener" class="work-link">サイトを見る →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo">D-tecnoWEB</span>
+          <div class="footer-social">
+            <a href="https://x.com/the_suger_web" target="_blank" rel="noopener" aria-label="X">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61550561601587" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/kantasato_web/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        <nav class="footer-nav">
+          <div class="footer-nav-row">
+            <a href="index.html#mission">ミッション</a>
+            <a href="index.html#services">事業内容</a>
+            <a href="index.html#features">弊社の強み</a>
+            <a href="contact.html">お問い合わせ</a>
+          </div>
+          <div class="footer-nav-row">
+            <a href="works.html">制作実績</a>
+            <a href="posts/index.html">お知らせ</a>
+            <a href="index.html#about">私たちについて</a>
+            <a href="index.html#company">会社概要</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2024 D-tecnoWEB  All Right Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // フェードイン
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    // ハンバーガーメニュー
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    function openMenu() { hamburgerBtn.classList.add('open'); hamburgerBtn.setAttribute('aria-expanded','true'); mobileMenu.classList.add('open'); document.body.style.overflow='hidden'; }
+    function closeMenu() { hamburgerBtn.classList.remove('open'); hamburgerBtn.setAttribute('aria-expanded','false'); mobileMenu.classList.remove('open'); document.body.style.overflow=''; }
+    hamburgerBtn.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
+    menuOverlay.addEventListener('click', closeMenu);
+    document.querySelectorAll('.menu-link').forEach(a => a.addEventListener('click', closeMenu));
+
+    // フィルター
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.work-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const tags = card.dataset.tags || '';
+          card.style.display = (filter === 'all' || tags.includes(filter)) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

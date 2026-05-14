@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>はな整骨院｜高松市番町｜腰痛・肩こり・交通事故対応</title>
+  <meta name="description" content="香川県高松市番町のはな整骨院。腰痛・肩こり・膝の痛み・交通事故対応。国家資格保有の施術師による根本改善。初回カウンセリング無料。保険適用OK。">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="はな整骨院｜香川県高松市 腰痛・肩こり・交通事故対応">
+  <meta property="og:description" content="腰痛・肩こり・骨盤矯正・交通事故対応。国家資格保有、保険適用OK、初回カウンセリング無料。">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80">
+  <meta property="og:url" content="https://hana-seikotsu.example.com">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://images.unsplash.com">
+
+  <!-- GA4 トラッキングコード（要設置） -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* ── Spacing tokens ── */
+      --space-xs:   4px;
+      --space-sm:   8px;
+      --space-md:   16px;
+      --space-lg:   32px;
+      --space-xl:   64px;
+      --space-2xl:  96px;
+      /* ── Typography tokens ── */
+      --font-base:  'Noto Sans JP', sans-serif;
+      --text-xs:    0.75rem;
+      --text-sm:    0.875rem;
+      --text-md:    1rem;
+      --text-lg:    1.25rem;
+      --text-xl:    1.5rem;
+      --text-2xl:   2rem;
+      --text-3xl:   2.75rem;
+      --text-4xl:   3.5rem;
+      --leading-tight: 1.3;
+      --leading-base:  1.7;
+      /* ── Shadow tokens ── */
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.08);
+      --shadow-md:  0 4px 16px rgba(0,0,0,.12);
+      --shadow-lg:  0 8px 32px rgba(0,0,0,.16);
+      /* ── Border radius tokens ── */
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  16px;
+      --radius-full: 9999px;
+      /* ── Transition tokens ── */
+      --transition-fast: 150ms ease;
+      --transition-base: 250ms ease;
+      --transition-slow: 400ms ease;
+      --main: #1A6FA8;
+      --main-dark: #145a8c;
+      --main-light: #2a84c4;
+      --sub: #E8F4FD;
+      --accent: #2ECC71;
+      --accent-dark: #27ae60;
+      --cta: #E74C3C;
+      --cta-dark: #c0392b;
+      --text: #333333;
+      --text-light: #666666;
+      --text-lighter: #999999;
+      --white: #ffffff;
+      --border: #dde8f0;
+      --shadow: 0 4px 20px rgba(26,111,168,0.12);
+      --shadow-hover: 0 8px 32px rgba(26,111,168,0.22);
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    /* ── Skip navigation (a11y) ── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: #1A6FA8;
+      color: #fff;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      z-index: 9999;
+      border-radius: 0 0 4px 0;
+    }
+    .skip-link:focus { top: 0; }
+    :focus-visible {
+      outline: 3px solid #1A6FA8;
+      outline-offset: 2px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--cta);
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(231,76,60,0.4);
+    }
+    .btn-primary:hover {
+      background: var(--cta-dark);
+      box-shadow: 0 6px 20px rgba(231,76,60,0.5);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--main);
+      border: 2px solid var(--main);
+    }
+    .btn-outline:hover {
+      background: var(--main);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(46,204,113,0.4);
+    }
+    .btn-accent:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ===== BADGES ===== */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .badge-insurance {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffc107;
+    }
+    .badge-free {
+      background: #d1f5e0;
+      color: #155724;
+      border: 1px solid var(--accent);
+    }
+    .badge-white {
+      background: rgba(255,255,255,0.95);
+      color: var(--main);
+      border: 1.5px solid var(--main);
+    }
+
+    /* ===== SECTION COMMON ===== */
+    .section {
+      padding: 80px 20px;
+    }
+    .section-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 900;
+      color: var(--main);
+      line-height: 1.3;
+    }
+    .section-title p {
+      margin-top: 12px;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+    .section-title .title-bar {
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--main), var(--accent));
+      border-radius: 2px;
+      margin: 14px auto 0;
+    }
+
+    /* ===== FADE IN ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+    .fade-in-delay-5 { transition-delay: 0.5s; }
+
+    /* ===========================
+       1. HEADER
+    =========================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      padding: 12px 20px;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .header-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .header-logo .logo-name {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--main);
+      letter-spacing: 0.05em;
+    }
+    .header-logo .logo-name span {
+      color: var(--accent);
+    }
+    .header-logo .logo-sub {
+      font-size: 0.68rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+    .header-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .header-tel {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .header-tel a {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-tel a:hover { color: var(--main-dark); }
+    .header-tel .tel-label {
+      font-size: 0.7rem;
+      color: var(--text-light);
+    }
+    .header-cta .btn {
+      padding: 12px 22px;
+      font-size: 0.9rem;
+    }
+
+    /* ===========================
+       2. HERO
+    =========================== */
+    .hero {
+      background: linear-gradient(rgba(10,40,80,0.45), rgba(10,40,80,0.45)), url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=85&auto=format&fit=crop") center/cover no-repeat;
+      padding: 80px 20px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(26,111,168,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -40px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(46,204,113,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: var(--main);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+      letter-spacing: 0.1em;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 900;
+      color: var(--main-dark);
+      line-height: 1.25;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--cta);
+      position: relative;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.8;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .hero-btns .btn {
+      font-size: 1.05rem;
+      padding: 18px 36px;
+    }
+    .hero-trust-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .trust-badge {
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .trust-badge .icon { font-size: 1rem; }
+
+    /* ===========================
+       3. WORRIES
+    =========================== */
+    .worries {
+      background: var(--white);
+    }
+    .worries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .worry-card {
+      background: var(--sub);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .worry-card:hover {
+      border-color: var(--main);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+    .worry-icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .worry-card p {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ===========================
+       4. STRENGTHS
+    =========================== */
+    .strengths {
+      background: linear-gradient(180deg, var(--sub) 0%, #f0f8ff 100%);
+    }
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .strength-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+    .strength-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+    .strength-icon-wrap {
+      width: 60px;
+      height: 60px;
+      min-width: 60px;
+      background: var(--sub);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+    .strength-content h3 {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--main);
+      margin-bottom: 8px;
+    }
+    .strength-content p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ===========================
+       5. FLOW
+    =========================== */
+    .flow {
+      background: var(--white);
+    }
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .flow-steps::before {
+      content: '';
+      position: absolute;
+      left: 36px;
+      top: 36px;
+      bottom: 36px;
+      width: 3px;
+      background: linear-gradient(180deg, var(--main), var(--accent));
+      border-radius: 2px;
+    }
+    .flow-step {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      padding: 24px 0;
+      position: relative;
+    }
+    .step-num {
+      width: 72px;
+      height: 72px;
+      min-width: 72px;
+      background: var(--main);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(26,111,168,0.3);
+    }
+    .step-num .step-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      opacity: 0.85;
+    }
+    .step-num .step-number {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+    .step-content {
+      flex: 1;
+      padding-top: 8px;
+    }
+    .step-content h3 {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--main);
+      margin-bottom: 6px;
+    }
+    .step-content p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+    .step-tag {
+      display: inline-block;
+      background: #fff3cd;
+      color: #856404;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-top: 8px;
+    }
+
+    /* ===========================
+       6. PRICE
+    =========================== */
+    .price {
+      background: linear-gradient(180deg, #f0f8ff 0%, var(--sub) 100%);
+    }
+    .price-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .price-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+    }
+    .price-card.featured {
+      border: 2.5px solid var(--main);
+    }
+    .price-card-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--main);
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 0.9rem;
+    }
+    .price-item:last-child { border-bottom: none; }
+    .price-item .item-name { color: var(--text); }
+    .price-item .item-price {
+      font-weight: 700;
+      color: var(--main);
+      font-size: 1rem;
+    }
+    .price-note {
+      background: var(--white);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* ===========================
+       7. DOCTOR
+    =========================== */
+    .doctor {
+      background: var(--white);
+    }
+    .doctor-inner {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+    .doctor-photo {
+      width: 200px;
+      height: 200px;
+      min-width: 200px;
+      border-radius: 50%;
+      background: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 5px solid var(--main);
+      overflow: hidden; padding: 0;
+            box-shadow: 0 8px 24px rgba(26,111,168,0.2);
+    }
+    .doctor-photo span { display: none; }
+    .doctor-info h3 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--main);
+      margin-bottom: 4px;
+    }
+    .doctor-title {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    .doctor-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .doctor-tag {
+      background: var(--sub);
+      color: var(--main);
+      border: 1px solid var(--border);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .doctor-message {
+      background: var(--sub);
+      border-left: 4px solid var(--main);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 22px;
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* ===========================
+       8. VOICES
+    =========================== */
+    .voices {
+      background: linear-gradient(180deg, var(--sub) 0%, #edf6fd 100%);
+    }
+    .voices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .voice-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .voice-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+    .voice-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 22px;
+      font-size: 5rem;
+      color: var(--main);
+      opacity: 0.12;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .voice-stars {
+      color: #f39c12;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .voice-text {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+    .voice-before-after {
+      background: var(--sub);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+    }
+    .voice-before-after .before {
+      color: var(--cta);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .voice-before-after .after {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+    .voice-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+    }
+    .voice-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sub), #cce5f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      border: 2px solid var(--border);
+    }
+    .voice-author-info .name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+    .voice-author-info .detail {
+      font-size: 0.76rem;
+      color: var(--text-lighter);
+    }
+
+    /* ===========================
+       9. FAQ
+    =========================== */
+    .faq {
+      background: var(--white);
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .faq-item.open {
+      border-color: var(--main);
+    }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      background: var(--white);
+      transition: background 0.3s;
+      gap: 16px;
+    }
+    .faq-item.open .faq-question {
+      background: var(--sub);
+    }
+    .faq-question-text {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      flex: 1;
+    }
+    .faq-q-icon {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--main);
+      background: var(--sub);
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+    .faq-item.open .faq-q-icon {
+      background: var(--main);
+      color: var(--white);
+    }
+    .faq-question-text p {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--main);
+      transition: all 0.3s;
+    }
+    .faq-item.open .faq-toggle {
+      background: var(--main);
+      border-color: var(--main);
+      color: var(--white);
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px 68px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .faq-a-icon {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    /* ===========================
+       10. ACCESS
+    =========================== */
+    .access {
+      background: linear-gradient(180deg, var(--sub) 0%, #edf6fd 100%);
+    }
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .access-info-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+    }
+    .access-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+    .access-item:last-child { border-bottom: none; }
+    .access-item-icon {
+      font-size: 1.2rem;
+      width: 28px;
+      text-align: center;
+      color: var(--main);
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .access-item-content .label {
+      font-size: 0.75rem;
+      color: var(--text-lighter);
+      margin-bottom: 3px;
+    }
+    .access-item-content .value {
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .map-placeholder {
+      background: linear-gradient(135deg, #d4e9f7 0%, #c0dff4 100%);
+      border-radius: var(--radius-lg);
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed var(--main);
+      color: var(--main);
+      gap: 12px;
+    }
+    .map-placeholder .map-icon { font-size: 3rem; }
+    .map-placeholder p {
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 0.88rem;
+    }
+    .hours-table th,
+    .hours-table td {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .hours-table th {
+      background: var(--main);
+      color: var(--white);
+      font-weight: 700;
+    }
+    .hours-table tr:nth-child(even) td { background: var(--sub); }
+    .hours-table .closed { color: var(--cta); font-weight: 700; }
+    .hours-table .open { color: var(--accent-dark); font-weight: 700; }
+
+    /* ===========================
+       11. FINAL CTA
+    =========================== */
+    .final-cta {
+      background: linear-gradient(135deg, var(--main) 0%, var(--main-dark) 100%);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .final-cta p {
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 36px;
+      font-size: 1rem;
+    }
+    .final-cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .final-cta-btns .btn {
+      font-size: 1.1rem;
+      padding: 20px 40px;
+    }
+    .final-cta .tel-big {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 900;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .final-cta .tel-note {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .line-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #06C755;
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 14px rgba(6,199,85,0.4);
+      margin-top: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .line-badge:hover {
+      background: #05b34b;
+      transform: translateY(-2px);
+    }
+
+    /* ===========================
+       12. FOOTER
+    =========================== */
+    .footer {
+      background: #1a2533;
+      color: rgba(255,255,255,0.8);
+      padding: 48px 20px 24px;
+    }
+    .footer-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 36px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-logo {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-desc {
+      font-size: 0.8rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+    }
+    .footer-section h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: 0.05em;
+    }
+    .footer-section p {
+      font-size: 0.8rem;
+      line-height: 2;
+      color: rgba(255,255,255,0.65);
+    }
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.76rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-bottom a {
+      color: rgba(255,255,255,0.6);
+    }
+    .footer-bottom a:hover { color: var(--white); }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 768px) {
+      .section { padding: 60px 16px; }
+
+      .header-inner { gap: 10px; }
+      .header-logo .logo-name { font-size: 1.15rem; }
+      .header-badges { display: none; }
+      .header-tel a { font-size: 1.1rem; }
+      .header-cta .btn { padding: 10px 16px; font-size: 0.82rem; }
+
+      .hero { padding: 60px 16px 80px; }
+      .hero h1 { font-size: clamp(1.7rem, 8vw, 2.4rem); }
+      .hero-btns .btn { font-size: 0.95rem; padding: 15px 24px; }
+
+      .worries-grid { grid-template-columns: repeat(2, 1fr); }
+      .strengths-grid { grid-template-columns: 1fr; }
+      .price-grid { grid-template-columns: 1fr; }
+      .voices-grid { grid-template-columns: 1fr; }
+      .access-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 24px; }
+
+      .doctor-inner { flex-direction: column; align-items: center; }
+      .doctor-photo { width: 160px; height: 160px; min-width: 160px; overflow: hidden; padding: 0; }
+      .doctor-info { text-align: center; }
+      .doctor-message { text-align: left; }
+
+      .flow-steps::before { left: 34px; }
+      .step-num { width: 68px; height: 68px; min-width: 68px; }
+
+      .final-cta-btns .btn { font-size: 1rem; padding: 16px 28px; }
+    }
+
+    @media (max-width: 480px) {
+      .worries-grid { grid-template-columns: 1fr; }
+      .hero-trust-badges { flex-direction: column; align-items: center; }
+    }
+  </style>
+
+  <!-- Schema.org 構造化データ (AEO対応) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["HealthAndBeautyBusiness", "MedicalBusiness"],
+    "name": "はな整骨院",
+    "url": "https://hana-seikotsu.example.com",
+    "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80",
+    "description": "香川県高松市番町の整骨院。腰痛・肩こり・交通事故対応。国家資格保有の施術師による根本改善。保険適用OK。初回カウンセリング無料。",
+    "telephone": "087-YYY-YYYY",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "番町2-1-5",
+      "addressLocality": "高松市",
+      "addressRegion": "香川県",
+      "postalCode": "760-0001",
+      "addressCountry": "JP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.3455,
+      "longitude": 134.0481
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    ],
+    "medicalSpecialty": ["Musculoskeletal", "PhysicalTherapy"],
+    "isAcceptingNewPatients": true,
+    "priceRange": "¥〜¥¥",
+    "currenciesAccepted": "JPY",
+    "paymentAccepted": "Cash, Credit Card, Insurance",
+    "hasMap": "https://maps.google.com/?q=はな整骨院+高松市",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "89"
+    },
+    "employee": {
+      "@type": "Person",
+      "name": "花田 誠",
+      "jobTitle": "院長・柔道整復師・鍼灸師"
+    },
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">コンテンツへスキップ</a>
+
+  <!-- ========================= -->
+  <!-- 1. HEADER -->
+  <!-- ========================= -->
+  <header class="header" role="banner">
+    <div class="header-inner">
+      <div class="header-logo">
+        <div class="logo-name"> はな<span>整骨院</span></div>
+        <div class="logo-sub">香川県高松市番町2-1-5｜国家資格保有施術師</div>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge-insurance"> 保険対応OK</span>
+        <span class="badge badge-free"> 初回無料</span>
+      </div>
+      <div class="header-right">
+        <div class="header-tel">
+          <a href="tel:087YYYYYYYY"> 087-YYY-YYYY</a>
+          <span class="tel-label">受付 9:00〜20:00（日祝休）</span>
+        </div>
+        <div class="header-cta">
+          <a href="#final-cta" class="btn btn-primary">今すぐ予約</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================= -->
+  <!-- 2. HERO -->
+  <!-- ========================= -->
+  <main id="main-content" aria-label="メインコンテンツ">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag fade-in">高松市の整骨院｜国家資格保有・保険対応</div>
+      <h1 class="fade-in fade-in-delay-1">
+        その<em>痛み</em>、<br>我慢しないでください。
+      </h1>
+      <p class="hero-sub fade-in fade-in-delay-2">
+        腰痛・肩こり・膝の痛み、根本から改善する整骨院が<br>高松にあります。
+      </p>
+      <div class="hero-btns fade-in fade-in-delay-3">
+        <a href="#final-cta" class="btn btn-primary">
+           今すぐ予約する
+        </a>
+        <a href="tel:087YYYYYYYY" class="btn btn-outline">
+           電話で相談する
+        </a>
+      </div>
+      <div class="hero-trust-badges fade-in fade-in-delay-4">
+        <div class="trust-badge"><span class="icon"></span>初回カウンセリング無料</div>
+        <div class="trust-badge"><span class="icon"></span>完全予約制</div>
+        <div class="trust-badge"><span class="icon"></span>保険適用OK</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 3. WORRIES -->
+  <!-- ========================= -->
+  <section class="section worries">
+    <div class="section-inner">
+      <div class="section-title fade-in">
+        <h2>こんなお悩みは<br>ありませんか？</h2>
+        <p>あなたの辛い症状に、丁寧に向き合います。</p>
+        <span class="title-bar"></span>
+      </div>
+      <div class="worries-grid">
+        <div class="worry-card fade-in fade-in-delay-1">
+          <span class="worry-icon"></span>
+          <p>腰が重く、<br>長時間立っていられない</p>
+        </div>
+        <div class="worry-card fade-in fade-in-delay-2">
+          <span class="worry-icon"></span>
+          <p>肩・首が凝って<br>頭痛まで出てくる</p>
+        </div>
+        <div class="worry-card fade-in fade-in-delay-3">
+          <span class="worry-icon"></span>
+          <p>慢性的な頭痛で<br>集中できない</p>
+        </div>
+        <div class="worry-card fade-in fade-in-delay-1">
+          <span class="worry-icon"></span>
+          <p>膝が痛くて<br>階段の上り下りがつらい</p>
+        </div>
+        <div class="worry-card fade-in fade-in-delay-2">
+          <span class="worry-icon"></span>
+          <p>交通事故後から<br>痛みやしびれが続いている</p>
+        </div>
+        <div class="worry-card fade-in fade-in-delay-3">
+          <span class="worry-icon"></span>
+          <p>産後から腰痛・<br>骨盤のゆがみが気になる</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 4. STRENGTHS -->
+  <!-- ========================= -->
+  <section class="section strengths">
+    <div class="section-inner">
+      <div class="section-title fade-in">
+        <h2>はな整骨院が<br>選ばれる4つの理由</h2>
+        <p>患者様の「またここに来たい」を大切にしています。</p>
+        <span class="title-bar"></span>
+      </div>
+      <div class="strengths-grid">
+        <div class="strength-card fade-in fade-in-delay-1">
+          <div class="strength-icon-wrap"></div>
+          <div class="strength-content">
+            <h3>国家資格保有の施術師</h3>
+            <p>全施術師が柔道整復師・鍼灸師などの国家資格を保有。確かな知識と技術で、安心・安全な施術を提供します。</p>
+          </div>
+        </div>
+        <div class="strength-card fade-in fade-in-delay-2">
+          <div class="strength-icon-wrap"></div>
+          <div class="strength-content">
+            <h3>保険適用で安心の料金</h3>
+            <p>健康保険・交通事故保険に対応。窓口負担を抑えて施術を受けられるので、費用の心配なく通院できます。</p>
+          </div>
+        </div>
+        <div class="strength-card fade-in fade-in-delay-3">
+          <div class="strength-icon-wrap"></div>
+          <div class="strength-content">
+            <h3>丁寧な問診と根本改善</h3>
+            <p>痛みの表面だけでなく、原因から徹底的にアプローチ。再発しない体づくりを一緒に目指します。</p>
+          </div>
+        </div>
+        <div class="strength-card fade-in fade-in-delay-4">
+          <div class="strength-icon-wrap">⏰</div>
+          <div class="strength-content">
+            <h3>予約制で待ち時間なし</h3>
+            <p>完全予約制のため、ほぼ待ち時間なくスムーズに施術を開始。お仕事帰りや育児の合間にもご利用いただけます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 5. FLOW -->
+  <!-- ========================= -->
+  <section class="section flow">
+    <div class="section-inner">
+      <div class="section-title fade-in">
+        <h2>施術の流れ</h2>
+        <p>初めての方も安心。ご来院からアフターケアまで丁寧にサポートします。</p>
+        <span class="title-bar"></span>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step fade-in fade-in-delay-1">
+          <div class="step-num">
+            <span class="step-label">STEP</span>
+            <span class="step-number">1</span>
+          </div>
+          <div class="step-content">
+            <h3>ご予約</h3>
+            <p>お電話またはLINEにてご予約ください。初めての方は「初回カウンセリング希望」とお伝えいただくとスムーズです。当日のご予約も空き状況によって対応可能です。</p>
+            <span class="step-tag"> 電話 / LINE でも予約OK</span>
+          </div>
+        </div>
+        <div class="flow-step fade-in fade-in-delay-2">
+          <div class="step-num">
+            <span class="step-label">STEP</span>
+            <span class="step-number">2</span>
+          </div>
+          <div class="step-content">
+            <h3>問診票記入・カウンセリング（無料）</h3>
+            <p>ご来院後、問診票にご記入いただきます。その後、施術師が症状・生活習慣・お仕事の内容など詳しくお伺いします。初回カウンセリングは無料です。</p>
+            <span class="step-tag"> 初回カウンセリング無料</span>
+          </div>
+        </div>
+        <div class="flow-step fade-in fade-in-delay-3">
+          <div class="step-num">
+            <span class="step-label">STEP</span>
+            <span class="step-number">3</span>
+          </div>
+          <div class="step-content">
+            <h3>施術</h3>
+            <p>カウンセリング内容をもとに、患者様一人ひとりに最適な施術プランをご提案・実施します。痛みや不安があればいつでもおっしゃってください。</p>
+          </div>
+        </div>
+        <div class="flow-step fade-in fade-in-delay-4">
+          <div class="step-num" style="background: var(--accent);">
+            <span class="step-label">STEP</span>
+            <span class="step-number">4</span>
+          </div>
+          <div class="step-content">
+            <h3>アフターケアアドバイス</h3>
+            <p>施術後、ご自宅でできるセルフケアや日常生活での注意点をわかりやすくアドバイスします。次回のご来院スケジュールもご相談いただけます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 6. PRICE -->
+  <!-- ========================= -->
+  <section class="section price">
+    <div class="section-inner">
+      <div class="section-title fade-in">
+        <h2>料金案内</h2>
+        <p>明確な料金体系で、安心して通院いただけます。</p>
+        <span class="title-bar"></span>
+      </div>
+      <div class="price-grid">
+        <div class="price-card featured fade-in fade-in-delay-1">
+          <div class="price-card-title">
+            <span></span> 保険診療（健康保険）
+          </div>
+          <div class="price-item">
+            <span class="item-name">初診料（初めての方）</span>
+            <span class="item-price">約300〜500円</span>
+          </div>
+          <div class="price-item">
+            <span class="item-name">再診料</span>
+            <span class="item-price">約200〜350円</span>
+          </div>
+          <div class="price-item">
+            <span class="item-name">交通事故（自賠責保険）</span>
+            <span class="item-price">自己負担0円</span>
+          </div>
+          <div class="price-item">
+            <span class="item-name">労災保険対応</span>
+            <span class="item-price">対応可</span>
+          </div>
+        </div>
+        <div class="price-card fade-in fade-in-delay-2">
+          <div class="price-card-title">
+            <span></span> 自費診療メニュー
+          </div>
+          <div class="price-item">
+            <span class="item-name">整体コース（50分）</span>
+            <span class="item-price">3,300円〜</span>
+          </div>
+          <div class="price-item">
+            <span class="item-name">骨盤矯正コース（60分）</span>
+            <span class="item-price">4,400円〜</span>
+          </div>
+          <div class="price-item">
+            <span class="item-name">産後骨盤ケア（60分）</span>
+            <span class="item-price">4,400円〜</span>
+          </div>
+          <div class="price-item">
+            <span class="item-name">スポーツ鍼灸コース（50分）</span>
+            <span class="item-price">3,850円〜</span>
+          </div>
+        </div>
+      </div>
+      <div class="price-note fade-in fade-in-delay-3">
+        <span></span>
+        保険適用外の場合も、施術前に必ず料金をご説明します。ご不明な点はお気軽にお問い合わせください。
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 7. DOCTOR -->
+  <!-- ========================= -->
+  <section class="section doctor">
+    <div class="section-inner">
+      <div class="section-title fade-in">
+        <h2>院長紹介</h2>
+        <p>患者様の「治りたい」気持ちに、全力で寄り添います。</p>
+        <span class="title-bar"></span>
+      </div>
+      <div class="doctor-inner fade-in">
+        <div class="doctor-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&q=85&auto=format&fit=crop&crop=face" alt="院長 花田誠" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div>
+        <div class="doctor-info">
+          <h3>花田 誠（はなだ まこと）</h3>
+          <p class="doctor-title">院長｜柔道整復師・鍼灸師</p>
+          <div class="doctor-tags">
+            <span class="doctor-tag"> 柔道整復師</span>
+            <span class="doctor-tag"> 鍼灸師</span>
+            <span class="doctor-tag">経験12年</span>
+            <span class="doctor-tag">交通事故対応</span>
+            <span class="doctor-tag">産後骨盤ケア</span>
+          </div>
+          <div class="doctor-message">
+            「痛みは我慢するものではありません。」<br><br>
+            私は柔道整復師として12年、数多くの患者様の痛みに向き合ってきました。腰痛、肩こり、交通事故後の後遺症など、症状はさまざまですが、どの患者様にも共通しているのは「早く良くなりたい」という思いです。<br><br>
+            はな整骨院では、痛みの根本原因を見つけ出し、再発しない体づくりを目標としています。一人ひとりと丁寧に向き合い、笑顔でお帰りいただけるよう全力で施術します。まずはお気軽にご相談ください。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 8. VOICES -->
+  <!-- ========================= -->
+  <section class="section voices">
+    <div class="section-inner">
+      <div class="section-title fade-in">
+        <h2>お客様の声</h2>
+        <p>実際にご来院いただいた患者様からのご感想です。</p>
+        <span class="title-bar"></span>
+      </div>
+      <div class="voices-grid">
+        <div class="voice-card fade-in fade-in-delay-1">
+          <div class="voice-stars"></div>
+          <div class="voice-before-after">
+            <div class="before">▼ 来院前：10年来の腰痛で毎朝起き上がれない</div>
+            <div class="after">▲ 現在：3ヶ月通院で朝スッキリ起きられるように！</div>
+          </div>
+          <p class="voice-text">
+            ずっと整形外科に通っていましたが痛みが取れず、知人の紹介ではな整骨院へ。院長先生が丁寧に原因を説明してくれて、生活習慣のアドバイスも的確でした。今では腰痛がほぼなくなり、毎日が楽しくなりました！
+          </p>
+          <div class="voice-author">
+            <div class="voice-avatar"></div>
+            <div class="voice-author-info">
+              <div class="name">田中 K・Mさま</div>
+              <div class="detail">50代女性｜パート勤務｜腰痛改善</div>
+            </div>
+          </div>
+        </div>
+        <div class="voice-card fade-in fade-in-delay-2">
+          <div class="voice-stars"></div>
+          <div class="voice-before-after">
+            <div class="before">▼ 来院前：デスクワークで慢性肩こり・頭痛</div>
+            <div class="after">▲ 現在：頭痛薬が不要になるほど改善！</div>
+          </div>
+          <p class="voice-text">
+            IT企業勤務で1日中パソコン作業をしており、肩こりからくる頭痛がひどかったです。最初は半信半疑でしたが、施術後に頭がスッキリして驚きました。予約制なので待ち時間がなく、仕事帰りにも通いやすいです。
+          </p>
+          <div class="voice-author">
+            <div class="voice-avatar"></div>
+            <div class="voice-author-info">
+              <div class="name">山本 R・Tさま</div>
+              <div class="detail">30代男性｜会社員｜肩こり・頭痛改善</div>
+            </div>
+          </div>
+        </div>
+        <div class="voice-card fade-in fade-in-delay-3">
+          <div class="voice-stars"></div>
+          <div class="voice-before-after">
+            <div class="before">▼ 来院前：産後から骨盤の歪みと腰痛が悩み</div>
+            <div class="after">▲ 現在：体型も戻り、育児も楽になりました！</div>
+          </div>
+          <p class="voice-text">
+            出産後から骨盤の歪みが気になり、腰痛もひどくなっていました。産後ケアに詳しいと聞いてこちらに来院。子連れでも丁寧に対応していただき、安心して施術を受けられました。体型も戻ってきて自信が持てています。
+          </p>
+          <div class="voice-author">
+            <div class="voice-avatar"></div>
+            <div class="voice-author-info">
+              <div class="name">佐藤 A・Sさま</div>
+              <div class="detail">40代女性｜主婦｜産後骨盤ケア</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 9. FAQ -->
+  <!-- ========================= -->
+  <section class="section faq">
+    <div class="section-inner">
+      <div class="section-title fade-in">
+        <h2>よくあるご質問</h2>
+        <p>初めての方からよくいただくご質問にお答えします。</p>
+        <span class="title-bar"></span>
+      </div>
+      <div class="faq-list fade-in">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">
+              <div class="faq-q-icon">Q</div>
+              <p>健康保険は使えますか？</p>
+            </div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <span class="faq-a-icon">A. </span>はい、健康保険が適用できる症状（骨折・脱臼・打撲・捻挫・挫傷など）については保険診療が可能です。症状によって保険が適用されない場合もありますが、その際は施術前に必ずご説明します。まずはお気軽にお電話でご確認ください。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">
+              <div class="faq-q-icon">Q</div>
+              <p>予約なしでも来院できますか？</p>
+            </div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <span class="faq-a-icon">A. </span>当院は完全予約制を採用しております。お待たせすることなく施術に入れるよう、事前のご予約をお願いしています。当日でも空き状況によってはご対応できる場合がありますので、まずはお電話にてご確認ください。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">
+              <div class="faq-q-icon">Q</div>
+              <p>交通事故後の治療は対応していますか？</p>
+            </div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <span class="faq-a-icon">A. </span>はい、交通事故による怪我（むち打ち・腰痛・打撲など）に対応しています。自賠責保険を使用するため、患者様の自己負担は原則として0円です。事故直後でなくても受診可能ですので、まずはご相談ください。保険会社との連絡もサポートします。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">
+              <div class="faq-q-icon">Q</div>
+              <p>初回の施術でどのくらい時間がかかりますか？</p>
+            </div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <span class="faq-a-icon">A. </span>初回は問診票の記入・カウンセリング・施術を合わせて約60〜80分程度お時間をいただいています。2回目以降は約30〜50分が目安です。お時間の都合がある場合は、ご予約時にお申し付けください。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">
+              <div class="faq-q-icon">Q</div>
+              <p>子どもを連れて来院することはできますか？</p>
+            </div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <span class="faq-a-icon">A. </span>はい、お子さま連れでも歓迎しています。キッズスペースをご用意しておりますので、小さなお子さまがいらっしゃるママ・パパも安心してご来院ください。産後ケアにも対応していますので、ぜひご活用ください。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-question-text">
+              <div class="faq-q-icon">Q</div>
+              <p>何回通えば効果が出ますか？</p>
+            </div>
+            <div class="faq-toggle">＋</div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <span class="faq-a-icon">A. </span>症状の程度・期間・体の状態によって個人差があります。急性の痛み（捻挫など）は3〜5回、慢性的な症状（長年の腰痛など）は1〜3ヶ月程度を目安にしていただくケースが多いです。初回カウンセリングで目安となる期間・回数をご説明しますのでご安心ください。
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 10. ACCESS -->
+  <!-- ========================= -->
+  <section class="section access">
+    <div class="section-inner">
+      <div class="section-title fade-in">
+        <h2>アクセス・受付時間</h2>
+        <p>高松市番町にて、皆様のご来院をお待ちしています。</p>
+        <span class="title-bar"></span>
+      </div>
+      <div class="access-grid">
+        <div>
+          <div class="access-info-card fade-in fade-in-delay-1">
+            <div class="access-item">
+              <div class="access-item-icon"></div>
+              <div class="access-item-content">
+                <div class="label">院名</div>
+                <div class="value">はな整骨院</div>
+              </div>
+            </div>
+            <div class="access-item">
+              <div class="access-item-icon"></div>
+              <div class="access-item-content">
+                <div class="label">所在地</div>
+                <div class="value">〒760-0017<br>香川県高松市番町2-1-5</div>
+              </div>
+            </div>
+            <div class="access-item">
+              <div class="access-item-icon"></div>
+              <div class="access-item-content">
+                <div class="label">電話番号</div>
+                <div class="value"><a href="tel:087YYYYYYYY" style="color:var(--main);font-weight:700;">087-YYY-YYYY</a></div>
+              </div>
+            </div>
+            <div class="access-item">
+              <div class="access-item-icon"></div>
+              <div class="access-item-content">
+                <div class="label">最寄り駅</div>
+                <div class="value">高松琴平電気鉄道「片原町駅」徒歩5分<br>JR「高松駅」徒歩12分</div>
+              </div>
+            </div>
+            <div class="access-item">
+              <div class="access-item-icon"></div>
+              <div class="access-item-content">
+                <div class="label">駐車場</div>
+                <div class="value">提携駐車場あり（2時間無料）</div>
+              </div>
+            </div>
+          </div>
+          <table class="hours-table fade-in fade-in-delay-2" style="margin-top:20px;">
+            <thead>
+              <tr>
+                <th>曜日</th>
+                <th>午前（9〜13時）</th>
+                <th>午後（15〜20時）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>月〜金</td>
+                <td class="open">●</td>
+                <td class="open">●</td>
+              </tr>
+              <tr>
+                <td>土曜日</td>
+                <td class="open">●</td>
+                <td class="open">●</td>
+              </tr>
+              <tr>
+                <td>日曜日</td>
+                <td class="closed">休診</td>
+                <td class="closed">休診</td>
+              </tr>
+              <tr>
+                <td>祝日</td>
+                <td class="closed">休診</td>
+                <td class="closed">休診</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="map-placeholder fade-in fade-in-delay-3">
+            <div class="map-icon">️</div>
+            <p>
+              Google マップを設置予定<br>
+              香川県高松市番町2-1-5<br>
+              <small>（実装時にiframeで埋め込み）</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 11. FINAL CTA -->
+  <!-- ========================= -->
+  <section class="final-cta" id="final-cta">
+    <div class="section-inner">
+      <h2 class="fade-in">痛みから解放される<br>一歩を踏み出しましょう</h2>
+      <p class="fade-in fade-in-delay-1">初回カウンセリング無料。まずはお気軽にご相談ください。</p>
+      <div class="final-cta-btns fade-in fade-in-delay-2">
+        <a href="tel:087YYYYYYYY" class="btn btn-primary" style="font-size:1.15rem; padding: 20px 44px;">
+           今すぐ電話する
+        </a>
+        <a href="#" class="btn" style="background:var(--white); color:var(--main); font-size:1.15rem; padding: 20px 44px;">
+           WEB予約はこちら
+        </a>
+      </div>
+      <div class="fade-in fade-in-delay-3">
+        <div class="tel-big">
+          <span></span>
+          <a href="tel:087YYYYYYYY" style="color:var(--white);">087-YYY-YYYY</a>
+        </div>
+        <p class="tel-note">受付時間：9:00〜20:00（日曜・祝日定休）</p>
+        <div style="margin-top: 20px;">
+          <div class="line-badge">
+            <span></span> LINEでも予約受付中！
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 12. FOOTER -->
+  <!-- ========================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo"> はな<span>整骨院</span></div>
+          <p class="footer-desc">
+            国家資格保有の施術師による<br>
+            根本改善整骨院。<br>
+            腰痛・肩こり・交通事故対応。<br>
+            高松市番町にて地域の皆様の<br>
+            健康をサポートしています。
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>診療案内</h4>
+          <p>
+            受付時間<br>
+            月〜土：9:00〜20:00<br>
+            ※昼休み 13:00〜15:00<br>
+            日曜・祝日：定休<br>
+            <br>
+             保険診療対応<br>
+             初回カウンセリング無料<br>
+             完全予約制（当日予約可）
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>アクセス</h4>
+          <p>
+            〒760-0017<br>
+            香川県高松市番町2-1-5<br>
+            <br>
+             <a href="tel:087YYYYYYYY">087-YYY-YYYY</a><br>
+            <br>
+             片原町駅 徒歩5分<br>
+             提携駐車場あり<br>
+            （2時間無料）
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 はな整骨院 All Rights Reserved. | Produced by <a href="#" style="color:rgba(255,255,255,0.5);">D-tecnoWEB</a></p>
+      </div>
+    </div>
+  </main>
+  </footer>
+
+  <script>
+    // ===== SCROLL FADE IN (IntersectionObserver) =====
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // ===== FAQ ACCORDION =====
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const answerInner = item.querySelector('.faq-answer-inner');
+
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        faqItems.forEach(fi => {
+          fi.classList.remove('open');
+          fi.querySelector('.faq-answer').style.maxHeight = '0';
+        });
+
+        // Toggle clicked
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answerInner.scrollHeight + 40 + 'px';
+        }
+      });
+    });
+
+    // ===== SMOOTH SCROLL for header CTA =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
