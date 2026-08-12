@@ -3,3 +3,26 @@
 CLAUDE.md
 DEBUG_GUIDE.md
 *.docx
+.vercel
+
+# ===== 非公開（このリポジトリは Public。誤って公開しないこと） =====
+# 業務データ・顧客情報・社内資料
+is-dashboard/
+インサイドセールス_ダッシュボード.xlsx
+*.xlsx
+brain/
+tools/
+
+# 内部設計書・営業資料
+統合自動化設計書.md
+診断設計書_Phase1.md
+クラウドワークス自動化設計書.md
+引き継ぎメモ_CW自動化.md
+応募文テンプレート.md
+全体像ダッシュボード.html
+
+# 作業中の下書き（公開前のもの）
+drafts_phase1/
+shishigumi-更新ファイル/
+diagnosis-prototype.html
+引き継ぎ文書_2026-08-07.md
