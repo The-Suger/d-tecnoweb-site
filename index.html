@@ -408,13 +408,22 @@
     #services { background: var(--white); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 48px;
     }
     .service-item {}
     .service-item {
       border-top: 3px solid #F5C400;
       padding-top: 28px;
+    }
+    .service-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--black);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
     }
     .service-icon {
       width: 44px;
@@ -1366,6 +1375,7 @@
     <div class="mobile-menu-drawer">
       <a href="#mission" class="menu-link">ミッション</a>
       <a href="#services" class="menu-link">事業内容</a>
+      <a href="web-diagnosis.html" class="menu-link">Web発信診断</a>
       <a href="#features" class="menu-link">弊社の強み</a>
       <a href="works.html" class="menu-link">制作実績</a>
       <a href="posts/index.html" class="menu-link">お知らせ</a>
@@ -1501,6 +1511,14 @@
           </div>
           <h3>AI研修・業務改善</h3>
           <p>ChatGPT・Claudeなどを業務に活かす方法を個別にレクチャー。業務フローの見直しや改善提案もセットで対応。AIを使いこなせるまで伴走します。</p>
+        </div>
+        <div class="service-item" data-animate style="transition-delay:0.3s">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M11 8v6M8 11h6"/></svg>
+          </div>
+          <h3>小さなお店のWeb発信診断</h3>
+          <p>サイト・Googleマップ・Instagramをお客様目線で確認し、優先して直したい3項目をPDFにまとめます。先着3件は3,300円（税込）です。</p>
+          <a href="web-diagnosis.html" class="service-link">診断内容を見る →</a>
         </div>
       </div>
     </div>
@@ -1885,6 +1903,7 @@
           <div class="footer-nav-row">
             <a href="#mission">ミッション</a>
             <a href="#services">事業内容</a>
+            <a href="web-diagnosis.html">Web発信診断</a>
             <a href="#features">弊社の強み</a>
             <a href="contact.html">お問い合わせ</a>
           </div>
